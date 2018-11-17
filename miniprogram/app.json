@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index",
+    "images/icon/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "【瓜子二手车直卖】",
+    "navigationBarTextStyle": "black"
+  }
+}
