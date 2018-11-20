@@ -13,8 +13,9 @@ Page,.container{
     align-items: center;
     vertical-align: middle;
     flex-direction: row;
-    z-index: 100;
     background:white;
+    z-index: 100;
+
 }
 .city{
     width: 156.506rpx;
@@ -361,6 +362,7 @@ Page,.container{
   height: 400rpx;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .strict-select-car-right{
   width: 419rpx;
@@ -370,10 +372,12 @@ Page,.container{
   justify-content: space-between;
 }
 .strict-select-car-right-one{
+  position: relative;
   width: 419rpx;  
   height: 199rpx;
 }
 .strict-select-car-right-two{
+  position: relative;
   width: 419rpx;
   height: 199rpx;
 }
@@ -387,6 +391,8 @@ img{
 }
 
 .strict-select-car-left-choose{
+    top: 0rpx;
+    position: absolute;
     font-size: 30rpx;
     height: 88rpx;
     width: 280rpx;
@@ -397,6 +403,8 @@ img{
     
 }
 .strict-select-car-left-chooseInfo{
+    top:88rpx;
+    position: absolute;
     text-align: center;
     height: 76rpx;
     font-size: 25rpx;
@@ -404,9 +412,10 @@ img{
     margin-top: 18rpx;
 }
 .strict-select-car-right-box{
+    position: absolute;
     width: 181rpx;
-    height: 65rpx;
-    margin-top: 66rpx;
+    height:80rpx;
+    top: 60rpx;
     margin-left: 20rpx;
     display: flex;
     flex-direction: column;
@@ -417,6 +426,7 @@ img{
     text-align: center;
 }
 .strict-select-car-right-chooseInfo{
+    margin-top: 15rpx;
     text-align: center;
     font-size: 25rpx; 
 
@@ -546,7 +556,7 @@ img{
 
 .uLike{
     width: 670rpx;
-    height: 1580rpx;
+    height: 1560rpx;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -586,6 +596,7 @@ img{
 .uLike-car-content{
     height: 1440rpx;
     width: 670rpx;
+    overflow: hidden;
 }
 .uLike-item-content{
     height: 240rpx;

@@ -1,17 +1,22 @@
 <link rel="stylesheet" href="../../../images/icon/iconfont.css" />
+<!-- <import src="../template/wxml/search-container.wxml"></import> -->
 <view class="container">
+  <!-- <template is="search-container"></template> -->
   <view class="search-container">
-    <!--  选择城市  -->
+    <!-- 选择城市 -->
     <view class="cityZhezhao {{isCityTrue?'isCityShow':'isCityHide'}}">
-        <view class='cityContent'>
-  <list-html data="{{city}}" binddetail="bindtap" search="{{value}}" myCity="{{myCity}}"></list-html>
-        </view>
+      <view class='cityContent'>
+        <list-html data="{{city}}" binddetail="bindtap" search="{{value}}" myCity="{{myCity}}"></list-html>
+      </view>
     </view>
-    <!--  end  -->
-
+    <!-- end -->
     <view class="city" bindtap="{{isCityTrue?'hideCity':'showCity'}}">
-      <view class="city_curr"><text>{{myCity}}</text></view>
-      <view class="down"><icon type="xialaxuanze-" fontSize="12px"  /></view>
+      <view class="city_curr">
+        <text>{{myCity}}</text>
+      </view>
+      <view class="down">
+        <icon type="xialaxuanze-" fontSize="12px" />
+      </view>
     </view>
     <view class="search">
       <van-search placeholder="搜索您要的车" background="none"></van-search>
@@ -34,12 +39,12 @@
   </view>
   <view class="navigation-bar">
     <swiper indicator-dots="true" circular="true" indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}">
-      <block wx:for="{{navigation_bar_lists}}" wx:for-item="navigates" wx:key="navigates.index">
+      <block wx:for="{{navigation_bar_lists}}" wx:for-item="navigates" wx:key="navigates.src">
         <swiper-item>
           <view class="navigation-lists">
             <!-- <block wx:for="{{navigation_bar_lists}}"   > -->
-            <block wx:for="{{navigates}}" wx:for-item="navigate" wx:key="navigate.color">
-              <view class="navigation-list">
+            <block wx:for="{{navigates}}" wx:for-item="navigate" wx:key="navigate.src">
+              <view class="navigation-list" bindtap="toDetailPage" data-src="{{navigate.src}}">
                 <view class="naviagation" style="background:{{navigate.color}}">
                   <icon type="{{navigate.icon_type}}" color="#FFF" fontSize="{{navigate.fontsize}}" />
                 </view>
@@ -102,7 +107,7 @@
             <image src="../../images/zhixuan_two.jpg" class="strict-car-img" />
           </view>
           <view class="strict-car-info">
-            <text> 起亚福瑞迪</text>
+            <text>起亚福瑞迪</text>
             <text class="red-font">\n3.52万</text>
           </view>
         </view>
@@ -127,32 +132,35 @@
       <view class='strict-select-car-title-more'>详情</view>
     </view>
     <view class='strict-select-car-content'>
-      <view class='strict-select-car-left' style="background-image:url(../../images/one.jpg);background-size:100% 100%">
+      <view class='strict-select-car-left'>
+        <image src="../../images/one.jpg" />
         <view class="strict-select-car-left-choose">
-          <text class="black-font">选你所爱</text>
+          <view class="black-font">选你所爱</view>
         </view>
         <view class="strict-select-car-left-chooseInfo">
-          <text class="red-font">3年内准新车</text>
+          <view class="red-font">3年内准新车</view>
         </view>
       </view>
       <view class='strict-select-car-right'>
-        <view class='strict-select-car-right-one' style="background-image:url(../../images/two.jpg);background-size:100% 100%">
+        <view class='strict-select-car-right-one'>
+          <image src="../../images/two.jpg" />
           <view class="strict-select-car-right-box">
             <view class="strict-select-car-right-choose">
-              <text class="black-font">入门首选</text>
+              <view class="black-font">入门首选</view>
             </view>
             <view class="strict-select-car-right-chooseInfo">
-              <text class="red-font">5-7万必看</text>
+              <view class="red-font">5-7万必看</view>
             </view>
           </view>
         </view>
-        <view class='strict-select-car-right-two' style="background-image:url(../../images/three.jpg);background-size:100% 100%">
+        <view class='strict-select-car-right-two'>
+          <image src="../../images/three.jpg" />
           <view class="strict-select-car-right-box">
             <view class="strict-select-car-right-choose">
-              <text class="black-font">车美价优</text>
+              <view class="black-font">车美价优</view>
             </view>
             <view class="strict-select-car-right-chooseInfo">
-              <text class="red-font">体验手动乐趣</text>
+              <view class="red-font">体验手动乐趣</view>
             </view>
           </view>
         </view>
@@ -175,26 +183,9 @@
                   <view class="discovery-content-info-text">限速120将成历史，第一条不限速高速来了，长161km</view>
                 </view>
                 <view block class="discovery-content-tag">
-                  <view class="discovery-content-tag-text"><text>用车</text></view>
-                </view>
-              </view>
-              <view class="discovery-content-right">
-                <view class="discovery-content-right-img">
-                  <image src="../../images/discovery_one.jpg"></image>
-                </view>
-              </view>
-            </view>
-          </view> 
-        </li>
-        <li>
-          <view class="discovery-content-contain">
-            <view class="discovery-content-item">
-              <view class="discovery-content-left">
-                <view class="discovery-content-info">
-                  <view class="discovery-content-info-text">限速120将成历史，第一条不限速高速来了，长161km</view>
-                </view>
-                <view block class="discovery-content-tag">
-                  <view class="discovery-content-tag-text"><text>用车</text></view>
+                  <view class="discovery-content-tag-text">
+                    <text>用车</text>
+                  </view>
                 </view>
               </view>
               <view class="discovery-content-right">
@@ -213,7 +204,30 @@
                   <view class="discovery-content-info-text">限速120将成历史，第一条不限速高速来了，长161km</view>
                 </view>
                 <view block class="discovery-content-tag">
-                  <view class="discovery-content-tag-text"><text>用车</text></view>
+                  <view class="discovery-content-tag-text">
+                    <text>用车</text>
+                  </view>
+                </view>
+              </view>
+              <view class="discovery-content-right">
+                <view class="discovery-content-right-img">
+                  <image src="../../images/discovery_one.jpg"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </li>
+        <li>
+          <view class="discovery-content-contain">
+            <view class="discovery-content-item">
+              <view class="discovery-content-left">
+                <view class="discovery-content-info">
+                  <view class="discovery-content-info-text">限速120将成历史，第一条不限速高速来了，长161km</view>
+                </view>
+                <view block class="discovery-content-tag">
+                  <view class="discovery-content-tag-text">
+                    <text>用车</text>
+                  </view>
                 </view>
               </view>
               <view class="discovery-content-right">
@@ -229,39 +243,81 @@
   </view>
   <view class="uLike">
     <view class="uLike-titleBar">
-      <view class="{{status === '1'?'active':''}}" data-status="1" bindtap="showStatus" id="ulike">猜你喜欢</view>
-      <view class="{{status === '2'?'active':''}}" data-status="2" bindtap="showStatus" id="strict">严选车</view>
-      <view class="{{status === '3'?'active':''}}" data-status="3" bindtap="showStatus" id="worthwhile">超值车源</view>
+      <view class="{{status === '1'?'active':''}}" data-status="1" bindtap="showStatus" id="ulike">
+        猜你喜欢
+      </view>
+      <view class="{{status === '2'?'active':''}}" data-status="2" bindtap="showStatus" id="strict">
+        严选车
+      </view>
+      <view class="{{status === '3'?'active':''}}" data-status="3" bindtap="showStatus" id="worthwhile">
+        超值车源
+      </view>
     </view>
-    <view class="uLike-car-content">
+    <view class="uLike-car-content" wx:if="{{status == 1}}">
       <ul>
         <li>
-          <view class="uLike-item-content">
+          <view class="uLike-item-content" wx:for="{{cars}}" wx:for-item="car" wx:if="{{car.type == '猜你喜欢'}}" wx:key="car.id">
             <view class="uLike-item">
               <view class="uLike-item-left">
-                  <image src="../../images/like.jpg" />
+                <image src="../../images/like.jpg" />
               </view>
               <view class="uLike-item-right">
                 <view class="uLike-item-info">
-                  <text id='info'>雪铁龙 世嘉 2013款 三厢\n1.6L 手动品尚型
-                  </text>
-                  <text id="old">2014年/3.9万公里\n</text>
-                  <text id="price">4.06万</text> <text id="old">新车价 </text> <text id='newPrice'>11.70万</text>
+                  <text id='info'>{{car.car}}</text>
+                  <text id="old">{{car.year}}/{{car.kilometer}}\n</text>
+                  <text id="price">{{car.price}}</text>
+                  <text id="old">新车价</text>
+                  <text id='newPrice'>{{caar.newprice}}</text>
                 </view>
               </view>
             </view>
           </view>
         </li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+      </ul>
+    </view>
+    <view class="uLike-car-content" wx:if="{{status == 2}}">
+      <ul>
+        <li>
+          <view class="uLike-item-content" wx:for="{{cars}}" wx:for-item="car" wx:if="{{car.type == '严选车'}}" wx:key="car.id">
+            <view class="uLike-item">
+              <view class="uLike-item-left">
+                <image src="../../images/strict.jpg" />
+              </view>
+              <view class="uLike-item-right">
+                <view class="uLike-item-info">
+                  <text id='info'>{{car.car}}</text>
+                  <text id="old">{{car.year}}/{{car.kilometer}}\n</text>
+                  <text id="price">{{car.price}}</text>
+                  <text id="old">新车价</text>
+                  <text id='newPrice'>{{caar.newprice}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </li>
+      </ul>
+    </view>
+    <view class="uLike-car-content" wx:if="{{status == 3}}">
+      <ul>
+        <li>
+          <view class="uLike-item-content" wx:for="{{cars}}" wx:for-item="car" wx:if="{{car.type=='超值车源'}}"  wx:key="car.id">
+            <view class="uLike-item">
+              <view class="uLike-item-left">
+                <image src="../../images/cheap.jpg" />
+              </view>
+              <view class="uLike-item-right">
+                <view class="uLike-item-info">
+                  <text id='info'>{{car.car}}</text>
+                  <text id="old">{{car.year}}/{{car.kilometer}}\n</text>
+                  <text id="price">{{car.price}}</text>
+                  <text id="old">新车价</text>
+                  <text id='newPrice'>{{caar.newprice}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </li>
       </ul>
     </view>
   </view>
-
-
-
-  
 </view>

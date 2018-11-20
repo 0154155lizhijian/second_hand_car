@@ -1,0 +1,28 @@
+<template name="search-container">
+    <view class="search-container">
+        <!-- 选择城市 -->
+        <view class="cityZhezhao {{isCityTrue?'isCityShow':'isCityHide'}}">
+            <view class='cityContent'>
+                <list-html data="{{city}}" binddetail="bindtap" search="{{value}}" myCity="{{myCity}}"></list-html>
+            </view>
+        </view>
+        <!-- end -->
+        <view class="city" bindtap="{{isCityTrue?'hideCity':'showCity'}}">
+            <view class="city_curr">
+                <text>{{myCity}}</text>
+            </view>
+            <view class="down">
+                <icon type="xialaxuanze-" fontSize="12px" />
+            </view>
+        </view>
+        <view class="search">
+            <van-search placeholder="搜索您要的车" background="none"></van-search>
+        </view>
+        <view class="call">
+            <icon type="kefu" fontSize="19px" />
+        </view>
+        <view class="user">
+            <icon type="yonghu" fontSize="19px" />
+        </view>
+    </view>
+</template>
