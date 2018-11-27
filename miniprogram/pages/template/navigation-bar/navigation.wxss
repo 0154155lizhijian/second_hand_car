@@ -1,0 +1,33 @@
+.navigation-bar{
+    width: 750rpx;
+    height: 420rpx;
+}
+.navigation-bar swiper{
+    width: 100%;
+    height: 100%;
+}
+.navigation-lists{
+    display: flex;
+    width: 750rpx;
+    height: 350rpx;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top:20rpx; 
+}
+.navigation-list{
+    width: 187.5rpx;
+    height: 150rpx;
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    font-size: 25rpx;
+}
+.naviagation{
+    width: 90rpx;
+    height: 90rpx;
+    text-align: center; 
+    line-height: 90rpx;
+    border-radius: 45rpx;
+    margin-bottom: 15rpx;
+}

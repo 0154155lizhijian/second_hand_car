@@ -1,0 +1,91 @@
+.strict-select-shop{
+    width: 750rpx;
+    display: flex;
+    flex-direction: column;
+    height: 610rpx;
+    align-items: center;
+
+}
+.strict-title{
+    width: 672rpx;
+    background-color: #fff;
+    height: 100rpx;
+    
+}
+.strict-title-name{
+    float: left;
+    line-height: 100rpx;
+    font-size: 30rpx;
+    font-weight: 400;
+    color: #303741;
+}
+
+.strict-content{
+    width: 672rpx;
+    background-color: #F5F7FA;
+    height: 510rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.strict-shop-img{
+    max-width: 240rpx;
+    max-height: 160rpx;
+    width: 240rpx;
+    height: 160rpx;
+    border-radius: 5rpx;
+}
+.strict-car-img{
+    max-width: 186rpx;
+    max-height: 124rpx;
+    width: 186rpx;
+    height: 124rpx;
+    border-radius: 5rpx;
+}
+
+.strict-shop{
+    height: 160rpx;
+    width: 638rpx;
+    display: flex;
+    margin-bottom: 44rpx;
+    margin-left: 50rpx;
+    margin-right: 50rpx; 
+    
+}
+.stricr-shop-info{
+    margin-left: 35rpx;
+    font-size: 19rpx;
+    margin-right: 40rpx;
+    color: #A2A9B1;
+    
+}
+.stricr-shop-info .h2{
+    font-size: 30rpx;
+    color: #0f0f0f;
+}
+.strict-car-lists{
+    height: 224rpx;
+    width: 638rpx;
+    display: flex;
+    margin-left: 50rpx;
+    margin-right: 50rpx;
+    justify-content:space-between; 
+    font-size: 25rpx;
+    text-align: center;
+}
+.strict-car-list{
+    height: 224rpx;
+    width: 186rpx;
+    /* margin-right: 40rpx; */
+    background-color: #fff;
+}
+
+.strict-car-info{
+    font-size: 25rpx;
+    text-align: center;
+    height: 100rpx;
+    padding-top: 10rpx;
+    line-height: 1.6;
+}

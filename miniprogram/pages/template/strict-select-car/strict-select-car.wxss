@@ -1,0 +1,113 @@
+.strict-select-car{
+    width: 750rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20rpx;
+  }
+  .strict-select-car-title{
+    width: 750rpx;
+    height: 114rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .strict-select-car-title-name{
+    width: 237rpx;
+    height: 60rpx;
+  }
+  /* .strict-select-car-title-name image{
+      max-width: 237rpx;
+      max-height: 60rpx;
+    } */
+  .strict-select-car-title-more{
+    margin-right:20rpx; 
+    font-size: 25rpx;
+    color: #8F96A0;
+  }
+  .strict-select-car-title-more::after{
+      content: "";
+      display: inline-block;
+      position: relative;
+      width: 12rpx;
+      height: 12rpx;
+      left:5rpx;
+      top:-2rpx;
+      /* background: yellow; */
+      border-top:1px solid #8F96A0;
+      border-right:1px solid #8F96A0; 
+      transform: rotate(45deg)
+  }
+  .strict-select-car-content{
+    width: 701rpx;
+    height: 400rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .strict-select-car-left{
+    width: 280rpx;
+    height: 400rpx;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .strict-select-car-right{
+    width: 419rpx;
+    height: 400rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .strict-select-car-right-one{
+    position: relative;
+    width: 419rpx;  
+    height: 199rpx;
+  }
+  .strict-select-car-right-two{
+    position: relative;
+    width: 419rpx;
+    height: 199rpx;
+  }
+  
+  .strict-select-car-left-choose{
+      top: 0rpx;
+      position: absolute;
+      font-size: 30rpx;
+      height: 88rpx;
+      width: 280rpx;
+      text-align: center;
+      line-height: 140rpx;
+      overflow: hidden;
+      
+      
+  }
+  .strict-select-car-left-chooseInfo{
+      top:88rpx;
+      position: absolute;
+      text-align: center;
+      height: 76rpx;
+      font-size: 25rpx;
+      width: 280rpx;
+      margin-top: 18rpx;
+  }
+  .strict-select-car-right-box{
+      position: absolute;
+      width: 181rpx;
+      height:80rpx;
+      top: 60rpx;
+      margin-left: 20rpx;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+  .strict-select-car-right-choose{
+      font-size: 30rpx;
+      text-align: center;
+  }
+  .strict-select-car-right-chooseInfo{
+      margin-top: 15rpx;
+      text-align: center;
+      font-size: 25rpx; 
+  
+  }

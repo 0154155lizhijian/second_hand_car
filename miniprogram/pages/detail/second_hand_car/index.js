@@ -1,7 +1,6 @@
 wx.cloud.init({ })
 let City = require('../../../utils/allcity.js');
 Page({
-
   data: {
     city: City,
     myCity: '南昌',
@@ -23,12 +22,15 @@ Page({
       isCityTrue: false
     })
   },
-
-
   bindtap(e) {
     this.setData({
       myCity: e.detail.name
     })
   },
+  back(e){
+    wx.navigateTo({
+      url: '../../index/index'
+    })
+  }
 })
 

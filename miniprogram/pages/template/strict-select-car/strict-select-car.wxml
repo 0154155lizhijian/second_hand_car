@@ -1,0 +1,45 @@
+<template name="strict-select-car">
+    <view class='strict-select-car'>
+        <view class='strict-select-car-title'>
+            <view class='strict-select-car-title-name'>
+                <image src="../../images/label.png" />
+            </view>
+            <view class='strict-select-car-title-more'>详情</view>
+        </view>
+        <view class='strict-select-car-content'>
+            <view class='strict-select-car-left'>
+                <image src="../../images/one.jpg" />
+                <view class="strict-select-car-left-choose">
+                    <view class="black-font">选你所爱</view>
+                </view>
+                <view class="strict-select-car-left-chooseInfo">
+                    <view class="red-font">3年内准新车</view>
+                </view>
+            </view>
+            <view class='strict-select-car-right'>
+                <view class='strict-select-car-right-one'>
+                    <image src="../../images/two.jpg" />
+                    <view class="strict-select-car-right-box">
+                        <view class="strict-select-car-right-choose">
+                            <view class="black-font">入门首选</view>
+                        </view>
+                        <view class="strict-select-car-right-chooseInfo">
+                            <view class="red-font">5-7万必看</view>
+                        </view>
+                    </view>
+                </view>
+                <view class='strict-select-car-right-two'>
+                    <image src="../../images/three.jpg" />
+                    <view class="strict-select-car-right-box">
+                        <view class="strict-select-car-right-choose">
+                            <view class="black-font">车美价优</view>
+                        </view>
+                        <view class="strict-select-car-right-chooseInfo">
+                            <view class="red-font">体验手动乐趣</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

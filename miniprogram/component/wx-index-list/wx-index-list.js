@@ -102,9 +102,14 @@ Component({
     },
     //点击定位
     click(e){
+      let cityName = e.currentTarget.dataset.detail;
+      let detail={
+        name:cityName
+      }
       this.setData({
         myCity:this.data.inCity
       })
+      this.triggerEvent('detail', detail,{})
     }
   }
 })

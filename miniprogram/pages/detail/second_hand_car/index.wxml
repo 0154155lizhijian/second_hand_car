@@ -1,12 +1,13 @@
 <view class="search-container">
+  <view class="back" bindtap="back">   </view>
     <!-- 选择城市 -->
+    <view class="city" bindtap="{{isCityTrue?'hideCity':'showCity'}}">
     <view class="cityZhezhao {{isCityTrue?'isCityShow':'isCityHide'}}">
       <view class='cityContent'>
         <list-html data="{{city}}" binddetail="bindtap" search="{{value}}" myCity="{{myCity}}"></list-html>
       </view>
     </view>
-    <!-- end -->
-    <view class="city" bindtap="{{isCityTrue?'hideCity':'showCity'}}">
+    <!-- end -->  
       <view class="city_curr">
         <text>{{myCity}}</text>
       </view>

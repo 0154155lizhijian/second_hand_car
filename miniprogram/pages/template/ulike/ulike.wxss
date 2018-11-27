@@ -1,0 +1,92 @@
+.uLike{
+    width: 670rpx;
+    height: 1560rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.uLike-titleBar{
+    width: 670rpx;
+    height: 111rpx;
+    border-top:1rpx solid #EFF2F6;
+    border-bottom: 1rpx solid #EFF2F6;
+    font-size: 30rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color:#303741;
+}
+.uLike-titleBar .active{
+    color: #22AC38;
+}
+
+#ulike{
+    width: 205rpx;
+    line-height: 111rpx;
+    text-align: left;
+    margin-left: 20rpx;
+}
+#strict{
+    width: 220rpx;
+    text-align: center;
+    line-height: 111rpx;
+}
+#worthwhile{
+    width: 205rpx;
+    margin-right: 20rpx;
+    text-align: right;
+    line-height: 111rpx;
+}
+.uLike-car-content{
+    height: 1440rpx;
+    width: 670rpx;
+    overflow: hidden;
+}
+.uLike-item-content{
+    height: 240rpx;
+    width: 670rpx;
+    border-bottom: 1rpx solid #EFF2F6;
+}
+.uLike-item{
+    height: 240rpx;
+    width: 670rpx;
+    display: flex;
+    align-items: center;
+}
+.uLike-item-left{
+    width: 240rpx;
+    height: 160rpx;
+    border-radius: 5rpx;
+    overflow: hidden;
+}
+.uLike-item-right{
+    margin-left: 30rpx;
+    margin-right: 10rpx;
+    height: 240rpx;
+    width: 390rpx;
+    display: flex;
+    align-items: center;
+}
+.uLike-item-info{
+    height: auto;
+    width: 100%;
+    text-align: left;
+    line-height: 1.2;
+}
+#info{
+    font-size: 30rpx;
+    color: #303741;
+}
+#old{
+    font-size: 25rpx;
+    color:#8F96A0;
+}
+#price{
+    font-size: 30rpx;
+    color: #F56539;
+}
+#newPrice{
+    font-size: 25rpx;
+    color:#8F96A0;
+    text-decoration: line-through;
+}

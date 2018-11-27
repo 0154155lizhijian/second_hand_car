@@ -1,0 +1,21 @@
+<template name='navigation-bar'>
+    <view class="navigation-bar">
+        <swiper indicator-dots="true" circular="true" indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}">
+          <block wx:for="{{navigation_bar_lists}}" wx:for-item="navigates" wx:key="navigates.src">
+            <swiper-item>
+              <view class="navigation-lists">
+                <!-- <block wx:for="{{navigation_bar_lists}}"   > -->
+                <block wx:for="{{navigates}}" wx:for-item="navigate" wx:key="navigate.src">
+                  <view class="navigation-list" bindtap="toDetailPage" data-src="{{navigate.src}}">
+                    <view class="naviagation" style="background:{{navigate.color}}">
+                      <icon type="{{navigate.icon_type}}" color="#FFF" fontSize="{{navigate.fontsize}}" />
+                    </view>
+                    <text>{{navigate.category}}</text>
+                  </view>
+                </block>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+</template>

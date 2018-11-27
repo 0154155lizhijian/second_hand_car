@@ -1,0 +1,81 @@
+<template name="like">
+    <view class="uLike">
+        <view class="uLike-titleBar">
+            <view class="{{status === '1'?'active':''}}" data-status="1" bindtap="showStatus" id="ulike">
+                猜你喜欢
+            </view>
+            <view class="{{status === '2'?'active':''}}" data-status="2" bindtap="showStatus" id="strict">
+                严选车
+            </view>
+            <view class="{{status === '3'?'active':''}}" data-status="3" bindtap="showStatus" id="worthwhile">
+                超值车源
+            </view>
+        </view>
+        <view class="uLike-car-content" wx:if="{{status == 1}}">
+            <ul>
+                <li>
+                    <view class="uLike-item-content" wx:for="{{cars}}" wx:for-item="car" wx:if="{{car.type == '猜你喜欢'}}" wx:key="car.id">
+                        <view class="uLike-item">
+                            <view class="uLike-item-left">
+                                <image src="../../images/like.jpg" />
+                            </view>
+                            <view class="uLike-item-right">
+                                <view class="uLike-item-info">
+                                    <text id='info'>{{car.car}}</text>
+                                    <text id="old">{{car.year}}/{{car.kilometer}}\n</text>
+                                    <text id="price">{{car.price}}</text>
+                                    <text id="old">新车价</text>
+                                    <text id='newPrice'>{{caar.newprice}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </li>
+            </ul>
+        </view>
+        <view class="uLike-car-content" wx:if="{{status == 2}}">
+            <ul>
+                <li>
+                    <view class="uLike-item-content" wx:for="{{cars}}" wx:for-item="car" wx:if="{{car.type == '严选车'}}" wx:key="car.id">
+                        <view class="uLike-item">
+                            <view class="uLike-item-left">
+                                <image src="../../images/strict.jpg" />
+                            </view>
+                            <view class="uLike-item-right">
+                                <view class="uLike-item-info">
+                                    <text id='info'>{{car.car}}</text>
+                                    <text id="old">{{car.year}}/{{car.kilometer}}\n</text>
+                                    <text id="price">{{car.price}}</text>
+                                    <text id="old">新车价</text>
+                                    <text id='newPrice'>{{caar.newprice}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </li>
+            </ul>
+        </view>
+        <view class="uLike-car-content" wx:if="{{status == 3}}">
+            <ul>
+                <li>
+                    <view class="uLike-item-content" wx:for="{{cars}}" wx:for-item="car" wx:if="{{car.type=='超值车源'}}" wx:key="car.id">
+                        <view class="uLike-item">
+                            <view class="uLike-item-left">
+                                <image src="../../images/cheap.jpg" />
+                            </view>
+                            <view class="uLike-item-right">
+                                <view class="uLike-item-info">
+                                    <text id='info'>{{car.car}}</text>
+                                    <text id="old">{{car.year}}/{{car.kilometer}}\n</text>
+                                    <text id="price">{{car.price}}</text>
+                                    <text id="old">新车价</text>
+                                    <text id='newPrice'>{{caar.newprice}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </li>
+            </ul>
+        </view>
+    </view>
+</template>

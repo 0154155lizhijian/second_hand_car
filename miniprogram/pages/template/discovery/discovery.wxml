@@ -1,0 +1,75 @@
+<template name="discovery">
+      <view class="discovery">
+    <view class="dicovery-title">
+      <view class="dicovery-title-name">发现</view>
+      <view class="discovery-title-more">更多</view>
+    </view>
+    <view class="discovery-content">
+      <ul class="discovery-content-items">
+        <li>
+          <view class="discovery-content-contain">
+            <view class="discovery-content-item">
+              <view class="discovery-content-left">
+                <view class="discovery-content-info">
+                  <view class="discovery-content-info-text">限速120将成历史，第一条不限速高速来了，长161km</view>
+                </view>
+                <view block class="discovery-content-tag">
+                  <view class="discovery-content-tag-text">
+                    <text>用车</text>
+                  </view>
+                </view>
+              </view>
+              <view class="discovery-content-right">
+                <view class="discovery-content-right-img">
+                  <image src="../../images/discovery_one.jpg"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </li>
+        <li>
+          <view class="discovery-content-contain">
+            <view class="discovery-content-item">
+              <view class="discovery-content-left">
+                <view class="discovery-content-info">
+                  <view class="discovery-content-info-text">限速120将成历史，第一条不限速高速来了，长161km</view>
+                </view>
+                <view block class="discovery-content-tag">
+                  <view class="discovery-content-tag-text">
+                    <text>用车</text>
+                  </view>
+                </view>
+              </view>
+              <view class="discovery-content-right">
+                <view class="discovery-content-right-img">
+                  <image src="../../images/discovery_one.jpg"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </li>
+        <li>
+          <view class="discovery-content-contain">
+            <view class="discovery-content-item">
+              <view class="discovery-content-left">
+                <view class="discovery-content-info">
+                  <view class="discovery-content-info-text">限速120将成历史，第一条不限速高速来了，长161km</view>
+                </view>
+                <view block class="discovery-content-tag">
+                  <view class="discovery-content-tag-text">
+                    <text>用车</text>
+                  </view>
+                </view>
+              </view>
+              <view class="discovery-content-right">
+                <view class="discovery-content-right-img">
+                  <image src="../../images/discovery_one.jpg"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </li>
+      </ul>
+    </view>
+  </view>
+</template>

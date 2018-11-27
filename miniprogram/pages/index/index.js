@@ -2,144 +2,60 @@ wx.cloud.init({
 
 })
 let City = require('../../utils/allcity.js');
+let Navigation_bar_lists = require('../template/navigation-bar/navigation-bar.js')
+let Classify = require('../template/hot-car/hot-car.js')
 // import getcity from './getcity'
 const db = wx.cloud.database();
+const car1Promise = new Promise((resolve, reject) => {
+  db.collection("car").get({
+    success: res => {
+      this.setData({
+        car1: res.data
+      })
+    }
+  });
+  resolve();
+})
+const car2Promise = new Promise((resolve,reject) => {
+  db.collection("car").skip(20).get({
+    success: res => {
+      this.setData({
+        car2: res.data
+      })
+    }
+  });
+  resolve()
+})
+const carPromise = new Promise((resolve,reject) => {
+  db.collection("car").skip(40).get({
+    success: res => {
+      var car = [...this.data.car1, ...this.data.car2, ...res.data]
+      console.log(car)
+      this.setData({
+        cars: car
+      })
+    }
+  });
+  resolve()
+})
 
 Page({
   data: {
-    city:City,
+    navigation_bar_lists: Navigation_bar_lists,
+    city: City,
     // inCity:'',
-    myCity:'南昌',
+    myCity: '南昌',
     isCityTrue: false,
-    status:1,
+    status: 1,
     ads: [],
     beforeColor: "#CBD1D9",//指示点颜色
     afterColor: "#22A038",//当前选中的指示点颜色
-    car1:[],
-    car2:[],
-    cars:[],
-    classify:[
-      {type:'5万以下',
-       hasIcon:false,
-       icon:''
-    },
-    {type:'5-10万',
-    hasIcon:false,
-    icon:''
-    }, {type:'10-15万',
-    hasIcon:false,
-    icon:''
-    },{type:'15万以上',
-    hasIcon:false,
-    icon:''
-    },{type:'大众',
-    hasIcon:true,
-    icon:'../../images/dazhong.png'
-    },{type:'日产',
-    hasIcon:true,
-    icon:'../../images/richan.png'
-    },{type:'现代',
-    hasIcon:true,
-    icon:'../../images/xiandai.png'
-    },{type:'吉利',
-    hasIcon:true,
-    icon:'../../images/jili.png'
-    },{type:'别克',
-    hasIcon:true,
-    icon:'../../images/bieke.jpg'
-    },{type:'雪佛兰',
-    hasIcon:true,
-    icon:'../../images/xuefulan.png'
-    },{type:'丰田',
-    hasIcon:true,
-    icon:'../../images/fengtian.png'
-    },{type:'更多',
-    hasIcon:true,
-    icon:'../../images/more.png'
-    },],
-
-    navigation_bar_lists:
-      [
-        [{
-          category:'二手车',
-          icon_type :'che',
-          color:'#0DC62A',
-          fontsize:'40rpx',
-          src:'../detail/second_hand_car/index'
-        },{
-          category:'严选车',
-          icon_type :'mai',
-          color:'#6671ED',
-          fontsize:'60rpx',
-          src:'../detail/strict_car/index'
-        },{
-          category:'免费卖车',
-          icon_type:'qiandai',
-          color:'#13DDB2',
-          fontsize:'40rpx',
-          src:'../detail/sale_car/index'
-        },{
-          category:"快速卖车",
-          icon_type:"mai1",
-          color:'#FFA441',
-          fontsize:'30rpx',
-          src:'../detail/fast_sale_car/index'
-        },{
-          category:"估价",
-          icon_type:"maichegujiapsd01",
-          color:'#F75B5B',
-          fontsize:'40rpx',
-          src:'../detail/valuation/index'
-        },{
-          category:"查成交",
-          icon_type:"chengjiao",
-          color:'#2A92ED',
-          fontsize:'40rpx',
-          src:'../detail/deal/index'
-        },{
-          category:"准新车",
-          icon_type:"haopingwuxing",
-          color:'#F65655',
-          fontsize:'40rpx',
-          src:'../detail/new_car/index'
-        },{
-          category:"降价急售",
-          icon_type:"shandian",
-          color:'#FFCF43',
-          fontsize:'40rpx',
-          src:'../detail/cheap_car/index'
-        }
-      ]
-      ,[
-        {
-          category:"今日超值",
-          icon_type:"fire",
-          color:'#FC781B',
-          fontsize:'40rpx',
-          src:'../detail/today_great/index'
-        },{
-          category:"练手车",
-          icon_type:"quxuechelian",
-          color:'#0CC129',
-          fontsize:'38rpx',
-          src:'../detail/test_car/index'
-        },{
-          category:"热销排行",
-          icon_type:"guest-branch",
-          color:'#FFA23E',
-          fontsize:'40rpx' ,
-          src:'../detail/top/index'
-        },{
-          category:"百科",
-          icon_type:"baike-tianchong",
-          color:'#3194EF',
-          fontsize:'40rpx',
-          src:'../detail/knowledge/index'
-        }
-      ]
-    ],
+    car1: [],
+    car2: [],
+    cars: [],
+    classify: Classify,
   },
-  
+
   onLoad: function () {
 
     db.collection("ads").get({
@@ -148,61 +64,110 @@ Page({
           ads: res.data
         })
       }
-    }),
+    })
+    // car1Promise()
+  //   new Promise((resolve,reject)=>{
+  //     db.collection("car").get({
+  //       success:res => {
+  //         this.setData({
+  //           car1:res.data
+  //         })
+  //       }
+  //     });
+  //     resolve(),(err)=>{
+  //       console.log(err)
+  //     };
+  // })
+  // .then(
+  //   res => {
+  //     db.collection("car").skip(20).get({
+  //       success:res => {
+  //         this.setData({
+  //           car2:res.data
+  //         })
+  //       }
+  //     });
+    //  resolve(),(err) => {
+    //    console.log(err)
+    //  }
+  //   }
+  // )
+  // .then(
+  //   res => {
+  //     db.collection("car").skip(40).get({
+  //       success:res => {
+  //         var car = [...this.data.car1,...this.data.car2,...res.data]
+  //         console.log(car)
+  //         this.setData({
+  //           cars:car
+  //         })
+  //         }  
+  //     });
+  
+  //   }
 
-    db.collection("car").get({
-      success:res => {
-        this.setData({
-          car1:res.data
-        })
-      }
-    }),
-    db.collection("car").skip(20).get({
-      success:res => {
-        this.setData({
-          car2:res.data
-        })
-      }
-    })
-    db.collection("car").skip(40).get({
-      success:res => {
-        var car = [...this.data.car1,...this.data.car2,...res.data]
-        this.setData({
-          cars:car
-        })
-      }
-    })
+  // )
+
+    // getCars()
   },
-  showStatus:function(e){
+  showStatus: function (e) {
     var st = e.currentTarget.dataset.status
     this.setData({
-      status:st,
+      status: st,
     })
   },
 
   //打开城市选择
   showCity: function () {
     this.setData({
-        isCityTrue: true
+      isCityTrue: true
     })
   },
   //关闭城市选择
   hideCity: function () {
     this.setData({
-        isCityTrue: false
+      isCityTrue: false
     })
   },
-  bindtap(e){
+  bindtap(e) {
     this.setData({
-      myCity:e.detail.name
+      myCity: e.detail.name
     })
   },
-  toDetailPage:function(e){
+  toDetailPage: function (e) {
     let src = e.currentTarget.dataset.src
     wx.navigateTo({
       url: src
     })
-  }
-  
+  },
+  onReceiveMessage(e) {
+    this.setData({
+      myCity: e.detail.name
+    })
+  },
+
 })
- 
+const getCars = () => {
+  new Promise((resolve, reject) => {
+    db.collection("car").get({
+      success: res => {
+        this.setData({
+          car1: res.data
+        })
+      }
+    });
+    resolve(1);
+  }).then(
+    res => {
+      console.log(res)
+    }
+  )
+}
+
+
+
+
+
+
+
+

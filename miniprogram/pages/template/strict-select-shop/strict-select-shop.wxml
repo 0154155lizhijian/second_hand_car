@@ -1,0 +1,48 @@
+<template name="strict-select-shop">
+    <view class="strict-select-shop">
+        <view class="strict-title">
+            <view class="strict-title-name">瓜子二手车严选直卖店</view>
+        </view>
+        <view class="strict-content">
+            <view class="strict-shop">
+                <view class="strict-shop-img">
+                    <image src="../../images/shop.jpg" class="strict-shop-img" />
+                </view>
+                <view class="stricr-shop-info">
+                    <text class="h2">瓜子二手车严选直卖店(南昌华南城店)</text>
+                    <text>\n\n车源数量： 210辆
+            看车地址： 红谷滩新区</text>
+                </view>
+            </view>
+            <view class="strict-car-lists">
+                <view class="strict-car-list">
+                    <view class="strict-car-img">
+                        <image src="../../images/zhixuan_one.jpg" class="strict-car-img" />
+                    </view>
+                    <view class="strict-car-info">
+                        <text>大众途安</text>
+                        <text class="red-font">\n9.65万</text>
+                    </view>
+                </view>
+                <view class="strict-car-list">
+                    <view class="strict-car-img">
+                        <image src="../../images/zhixuan_two.jpg" class="strict-car-img" />
+                    </view>
+                    <view class="strict-car-info">
+                        <text>起亚福瑞迪</text>
+                        <text class="red-font">\n3.52万</text>
+                    </view>
+                </view>
+                <view class="strict-car-list">
+                    <view class="strict-car-img">
+                        <image src="../../images/zhixuan_three.jpg" class="strict-car-img" />
+                    </view>
+                    <view class="strict-car-info">
+                        <text>大众凌度</text>
+                        <text class="red-font">\n10.45万</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

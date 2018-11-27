@@ -1,56 +1,37 @@
-Page,.container{
+/* Page,.container{
     box-sizing: border-box;
     width: 100%;
     padding: 0;
     margin: 0;
-}
-.back{
-    width: 40rpx;
-    height: 100%;
-    margin-left: 10rpx;
-}
-.back::after{
-    content: "";
-    display: inline-block;
-    position: absolute;
-    width: 15rpx;   
-    height: 15rpx;
-    left:30rpx;
-    top:35rpx;
-    /* background: yellow; */
-    border-bottom:2px solid #8F96A0;
-    border-left:2px solid #8F96A0; 
-    transform: rotate(45deg)
-}
+} */
 
 .search-container{
+    margin: 0 auto;
     width: 100%;
-    position: absolute;
-    height: 84rpx;
+    position: fixed;
+    height: 84.338rpx;
     display: flex;
     align-items: center;
     vertical-align: middle;
     flex-direction: row;
-    z-index: 100;
     background:white;
+    z-index: 100;
 }
 .city{
+    flex-shrink: 0;
     width: auto;
     display:flex;
-    flex-shrink: 0;
     flex-direction: row;
     flex-wrap: nowrap;
     overflow:visible;
     align-items: center;
-    position: relative;
 }
 .city_curr{
-  width: 126rpx;
+  width: 126.506rpx;
   color: #5F6670 ;
   line-height: 84.338rpx;
   text-align: center;
   font-size: 27rpx;
-  margin-right: 10rpx;
 }
 .down{
   width: 30rpx;
@@ -59,16 +40,14 @@ Page,.container{
   line-height:84rpx;
 }
 .search{
-    width: 445rpx;
+    width: 445.904rpx;
 }
 .call{
-    width: 67rpx;
+    width: 67.265rpx;
 }
 .user{
-    width: 80rpx;
+    width: 80.325rpx;
 }
-
-
 /* 城市提示层  */
 .isCityShow{
     display: block;
@@ -134,5 +113,4 @@ Page,.container{
     height: 0;
     color: transparent;
   }
-/*  end  */
-
+  /*  end  */

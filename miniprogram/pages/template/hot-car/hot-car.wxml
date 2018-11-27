@@ -1,0 +1,22 @@
+<template name="hot-car">
+    <view class="hot-car">
+        <view class="title">
+            <view class="title-name">热门二手车</view>
+            <view class="title-more">
+                <span class="toAll">查看全部</span>
+            </view>
+        </view>
+        <view class="select">
+            <view class="select-item" wx:for="{{classify}}" wx:for-item="item" wx:key="index">
+                <view class="select-item-font" wx:if="{{!item.hasIcon}}">{{item.type}}</view>
+                <view class="select-item-item" wx:else>
+                    <view class="type-icon-img">
+                        <image class="type-icon-img" src="{{item.icon}}" />
+                        <!-- <image class="type-icon-img" src="../../../images/jili.png" /> -->
+                    </view>
+                    <view class="select-item-item-font">{{item.type}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
