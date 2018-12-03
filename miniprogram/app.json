@@ -1,9 +1,7 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/detail/second_hand_car/index",
-    
-   
+    "pages/index/index",
     "images/icon/index",
     "pages/detail/cheap_car/index",
     "pages/detail/deal/index",

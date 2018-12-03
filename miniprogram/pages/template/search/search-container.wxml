@@ -7,12 +7,20 @@
             </view>
         </view>
         <!-- end -->
-        <view class="city" bindtap="{{isCityTrue?'hideCity':'showCity'}}">
+        <view class="city" wx:if="{{isCityTrue}}" bindtap="hideCity">
             <view class="city_curr">
                 <text>{{myCity}}</text>
             </view>
             <view class="down">
-                <icon type="xialaxuanze-" fontSize="12px" />
+                <icon type="een" fontSize="12px" />
+            </view>
+        </view>
+        <view class="city" wx:else bindtap="showCity">
+            <view class="city_curr">
+                <text>{{myCity}}</text>
+            </view>
+            <view class="down">
+                <icon type="down" fontSize="12px" />
             </view>
         </view>
         <view class="search">

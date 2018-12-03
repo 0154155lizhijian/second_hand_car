@@ -1,44 +1,9 @@
-wx.cloud.init({
-
-})
+wx.cloud.init()
 let City = require('../../utils/allcity.js');
 let Navigation_bar_lists = require('../template/navigation-bar/navigation-bar.js')
 let Classify = require('../template/hot-car/hot-car.js')
 // import getcity from './getcity'
 const db = wx.cloud.database();
-const car1Promise = new Promise((resolve, reject) => {
-  db.collection("car").get({
-    success: res => {
-      this.setData({
-        car1: res.data
-      })
-    }
-  });
-  resolve();
-})
-const car2Promise = new Promise((resolve,reject) => {
-  db.collection("car").skip(20).get({
-    success: res => {
-      this.setData({
-        car2: res.data
-      })
-    }
-  });
-  resolve()
-})
-const carPromise = new Promise((resolve,reject) => {
-  db.collection("car").skip(40).get({
-    success: res => {
-      var car = [...this.data.car1, ...this.data.car2, ...res.data]
-      console.log(car)
-      this.setData({
-        cars: car
-      })
-    }
-  });
-  resolve()
-})
-
 Page({
   data: {
     navigation_bar_lists: Navigation_bar_lists,
@@ -46,71 +11,62 @@ Page({
     // inCity:'',
     myCity: '南昌',
     isCityTrue: false,
-    status: 1,
+    status: '',
     ads: [],
-    beforeColor: "#CBD1D9",//指示点颜色
-    afterColor: "#22A038",//当前选中的指示点颜色
-    car1: [],
-    car2: [],
     cars: [],
+    beforeColor: "#CBD1D9", //指示点颜色
+    afterColor: "#22A038", //当前选中的指示点颜色
     classify: Classify,
+    pageNum: 5,
+    page: 1,
+    hiddenLoading: false,
   },
 
-  onLoad: function () {
+  //云数据库分页加载数据
+  getcarinfo: function() {
+    let page = this.data.page
+    wx.cloud.callFunction({
+        name: 'getcarinfo',
+        data: {
+          page: page,
+        }
+      })
+      .then(res => {
+        let data = res.result.data
+        let cars = [...data, ...this.data.cars]
+        console.log(cars)
+        this.setData({
+          hiddenLoading: true,
+          cars: cars
+        })
+      })
+  },
 
-    db.collection("ads").get({
-      success: res => {
+  onLoad: function(options) {
+    db.collection('ads').get({
+      success: (res) => {
+        // console.log(res)
         this.setData({
           ads: res.data
         })
       }
     })
-    // car1Promise()
-  //   new Promise((resolve,reject)=>{
-  //     db.collection("car").get({
-  //       success:res => {
-  //         this.setData({
-  //           car1:res.data
-  //         })
-  //       }
-  //     });
-  //     resolve(),(err)=>{
-  //       console.log(err)
-  //     };
-  // })
-  // .then(
-  //   res => {
-  //     db.collection("car").skip(20).get({
-  //       success:res => {
-  //         this.setData({
-  //           car2:res.data
-  //         })
-  //       }
-  //     });
-    //  resolve(),(err) => {
-    //    console.log(err)
-    //  }
-  //   }
-  // )
-  // .then(
-  //   res => {
-  //     db.collection("car").skip(40).get({
-  //       success:res => {
-  //         var car = [...this.data.car1,...this.data.car2,...res.data]
-  //         console.log(car)
-  //         this.setData({
-  //           cars:car
-  //         })
-  //         }  
-  //     });
-  
-  //   }
-
-  // )
-
-    // getCars()
+    this.getcarinfo(),
+    this.setData({
+      status: 1,
+    })
   },
-  showStatus: function (e) {
+  onReachBottom() {
+    if (this.data.page <= this.data.pageNum) {
+      let page = this.data.page + 1;
+      this.setData({
+        page: page
+      });
+      this.getcarinfo()
+    }
+    console.log('到页面底部了');
+  },
+  showStatus: function(e) {
     var st = e.currentTarget.dataset.status
     this.setData({
       status: st,
@@ -118,13 +74,13 @@ Page({
   },
 
   //打开城市选择
-  showCity: function () {
+  showCity: function() {
     this.setData({
       isCityTrue: true
     })
   },
   //关闭城市选择
-  hideCity: function () {
+  hideCity: function() {
     this.setData({
       isCityTrue: false
     })
@@ -134,7 +90,7 @@ Page({
       myCity: e.detail.name
     })
   },
-  toDetailPage: function (e) {
+  toDetailPage: function(e) {
     let src = e.currentTarget.dataset.src
     wx.navigateTo({
       url: src
@@ -145,29 +101,10 @@ Page({
       myCity: e.detail.name
     })
   },
+  toMore: function(e) {
+    wx.navigateTo({
+      url: '../detail/second_hand_car/index',
+    })
+  }
 
 })
-const getCars = () => {
-  new Promise((resolve, reject) => {
-    db.collection("car").get({
-      success: res => {
-        this.setData({
-          car1: res.data
-        })
-      }
-    });
-    resolve(1);
-  }).then(
-    res => {
-      console.log(res)
-    }
-  )
-}
-
-
-
-
-
-
-
-

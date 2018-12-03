@@ -9,7 +9,7 @@
     margin: 0 auto;
     width: 100%;
     position: fixed;
-    height: 84.338rpx;
+    height: 84rpx;
     display: flex;
     align-items: center;
     vertical-align: middle;
@@ -29,7 +29,7 @@
 .city_curr{
   width: 126.506rpx;
   color: #5F6670 ;
-  line-height: 84.338rpx;
+  line-height: 84rpx;
   text-align: center;
   font-size: 27rpx;
 }
@@ -40,13 +40,13 @@
   line-height:84rpx;
 }
 .search{
-    width: 445.904rpx;
+    width: 446rpx;
 }
 .call{
-    width: 67.265rpx;
+    width: 67rpx;
 }
 .user{
-    width: 80.325rpx;
+    width: 80rpx;
 }
 /* 城市提示层  */
 .isCityShow{

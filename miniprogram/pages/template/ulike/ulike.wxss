@@ -1,6 +1,7 @@
 .uLike{
     width: 670rpx;
-    height: 1560rpx;
+    height: auto;
+    max-height: 1560rpx;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,7 +39,8 @@
     line-height: 111rpx;
 }
 .uLike-car-content{
-    height: 1440rpx;
+    height: auto;
+    max-height: 1440rpx;
     width: 670rpx;
     overflow: hidden;
 }

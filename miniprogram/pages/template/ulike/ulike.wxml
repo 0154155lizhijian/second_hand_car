@@ -1,13 +1,13 @@
 <template name="like">
     <view class="uLike">
         <view class="uLike-titleBar">
-            <view class="{{status === '1'?'active':''}}" data-status="1" bindtap="showStatus" id="ulike">
+            <view class="{{status == '1'?'active':''}}" data-status="1" bindtap="showStatus" id="ulike">
                 猜你喜欢
             </view>
-            <view class="{{status === '2'?'active':''}}" data-status="2" bindtap="showStatus" id="strict">
+            <view class="{{status == '2'?'active':''}}" data-status="2" bindtap="showStatus" id="strict">
                 严选车
             </view>
-            <view class="{{status === '3'?'active':''}}" data-status="3" bindtap="showStatus" id="worthwhile">
+            <view class="{{status == '3'?'active':''}}" data-status="3" bindtap="showStatus" id="worthwhile">
                 超值车源
             </view>
         </view>
@@ -21,7 +21,7 @@
                             </view>
                             <view class="uLike-item-right">
                                 <view class="uLike-item-info">
-                                    <text id='info'>{{car.car}}</text>
+                                    <text id='info'>{{car.car}}\n</text>
                                     <text id="old">{{car.year}}/{{car.kilometer}}\n</text>
                                     <text id="price">{{car.price}}</text>
                                     <text id="old">新车价</text>
@@ -43,7 +43,7 @@
                             </view>
                             <view class="uLike-item-right">
                                 <view class="uLike-item-info">
-                                    <text id='info'>{{car.car}}</text>
+                                    <text id='info'>{{car.car}}\n</text>
                                     <text id="old">{{car.year}}/{{car.kilometer}}\n</text>
                                     <text id="price">{{car.price}}</text>
                                     <text id="old">新车价</text>
@@ -65,11 +65,11 @@
                             </view>
                             <view class="uLike-item-right">
                                 <view class="uLike-item-info">
-                                    <text id='info'>{{car.car}}</text>
+                                    <text id='info'>{{car.car}}\n</text>
                                     <text id="old">{{car.year}}/{{car.kilometer}}\n</text>
                                     <text id="price">{{car.price}}</text>
                                     <text id="old">新车价</text>
-                                    <text id='newPrice'>{{caar.newprice}}</text>
+                                    <text id='newPrice'>{{car.newprice}}</text>
                                 </view>
                             </view>
                         </view>
@@ -77,5 +77,6 @@
                 </li>
             </ul>
         </view>
+        <view class="more" bindtap="toMore">查看更多</view>
     </view>
 </template>

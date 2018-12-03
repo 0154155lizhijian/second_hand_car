@@ -1,8 +1,21 @@
+ @import "../../template/search/search-container.wxss";
+ @import "../../template/ulike/ulike.wxss"; 
 Page,.container{
-    box-sizing: border-box;
     width: 100%;
     padding: 0;
     margin: 0;
+}
+.search-container{
+    margin: 0 auto;
+    width: 100%;
+    position: relative !important;
+    height: 84rpx;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    flex-direction: row;
+    background:white;
+    z-index: 100;
 }
 .back{
     width: 40rpx;
@@ -23,116 +36,133 @@ Page,.container{
     transform: rotate(45deg)
 }
 
-.search-container{
-    width: 100%;
-    position: absolute;
-    height: 84rpx;
+.rank{
     display: flex;
-    align-items: center;
-    vertical-align: middle;
+    width: 750rpx;
+    height: 70rpx; 
     flex-direction: row;
-    z-index: 100;
-    background:white;
+    justify-content: space-around;
+    align-items: center;
+    /* box-sizing: border-box; */
 }
-.city{
-    width: auto;
-    display:flex;
-    flex-shrink: 0;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow:visible;
-    align-items: center;
+.rank1{
+    font-size: 30rpx;
+    color: #333333;
+    width: 130rpx;
+    line-height: 70rpx;
+    height: 70rpx;
+    position: relative;
+    /* box-sizing: border-box; */
+}
+.rank1_else{
+    font-size: 30rpx;
+    color: #333333;
+    width: 130rpx;
+    line-height: 70rpx;
+    height: 70rpx;
     position: relative;
 }
-.city_curr{
-  width: 126rpx;
-  color: #5F6670 ;
-  line-height: 84.338rpx;
-  text-align: center;
-  font-size: 27rpx;
-  margin-right: 10rpx;
+.rank2,.rank3,.rank4{
+    font-size: 30rpx;
+    color: #333333;
+    width: 70rpx;
+    line-height: 70rpx;
+    height: 70rp;
+    position: relative;
+    box-sizing: border-box;
 }
-.down{
-  width: 30rpx;
-  text-align: left;
-  display: inline-block;
-  line-height:84rpx;
+.rank2,.rank3,.rank4{
+    font-size: 30rpx;
+    color: #333333;
+    width: 70rpx;
+    line-height: 70rpx;
+    height: 70rp;
+    position: relative;
+    box-sizing: border-box;
 }
-.search{
-    width: 445rpx;
+.rank2_else,.rank3_else,.rank4_else{
+    font-size: 30rpx;
+    color: #333333;
+    width: 70rpx;
+    line-height: 70rpx;
+    height: 70rp;
+    position: relative;
+    box-sizing: border-box;
 }
-.call{
-    width: 67rpx;
+.rank1::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 15rpx;   
+    height: 15rpx;
+    left:130rpx;
+    top:25rpx;
+    /* background: yellow; */
+    border-bottom:2px solid #363636;
+    border-right:2px solid #363636; 
+    transform: rotate(45deg)
 }
-.user{
-    width: 80rpx;
+.rank1_else::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 15rpx;   
+    height: 15rpx;
+    left:130rpx;
+    top:34rpx;
+    /* background: yellow; */
+    border-top:2px solid #363636;
+    border-left:2px solid #363636; 
+    transform: rotate(45deg)
+}
+.rank2::after,.rank3::after,.rank4::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 15rpx;   
+    height: 15rpx;
+    left:70rpx;
+    top:25rpx;
+    /* background: yellow; */
+    border-bottom:2px solid #363636;
+    border-right:2px solid #363636; 
+    transform: rotate(45deg)
+}
+.rank2_else::after,.rank3_else::after,.rank4_else::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 15rpx;   
+    height: 15rpx;
+    left:70rpx;
+    top:34rpx;
+    /* background: yellow; */
+    border-top:2px solid #363636;
+    border-left:2px solid #363636; 
+    transform: rotate(45deg)
+}
+.line{
+  width: 750rpx;
+  background: #f7f7f7;
+  height: 1rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+image{
+    max-width: 100%;
+    max-height: 100%;
+}
+.uLike-car-content{
+    height: auto !important;
+    max-height: none !important;
 }
 
-
-/* 城市提示层  */
-.isCityShow{
-    display: block;
-}
-.isCityHide{
-    display: none;
-}
-.cityZhezhao{
-    height: 85%;
-    width: 94%;
-    margin-top: 15%;
-    margin-left: 3%;
-    position: fixed;
-    background-color:#F5F7FA;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
-.cityZhezhao::-webkit-scrollbar {
-    display: none;
-  }
-
-.cityContent{
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-}
-.nowInCityText{
-    height: 113rpx;
-    color: #8F96A0;
-    font-size: 25rpx;
-    text-align: left;
-    margin-left: 31rpx;
-    line-height: 113rpx;
-}
-.inCityContent{
-    width: 100%;
-    background-color: #fff;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.inCity{
-    height: 95rpx;
-    line-height: 95rpx;
-    width: 25%;
+.foot{
+    margin-top: 15rpx;
+    height: 60rpx;
+    font-size: 30rpx;
     text-align: center;
-    color: #303741;
+    color: #8f96A0;
 }
-.cityTitle{
-    height: 54rpx;
-    color: #8F96A0;
-    font-size: 25rpx;
-    text-align: left;
-    margin-left: 31rpx;
-    line-height: 54rpx;
-}
-  /* 关闭滚动条  */
-  ::-webkit-scrollbar{
-    width: 0;
-    height: 0;
-    color: transparent;
-  }
-/*  end  */
+
 

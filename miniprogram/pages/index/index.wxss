@@ -32,7 +32,27 @@ image{
     max-width: 100%;
     max-height: 100%;
 }
-
+.more{
+    margin-top: 15rpx;
+    height: 60rpx;
+    font-size: 30rpx;
+    text-align: center;
+    color: #8f96A0;
+    position: relative;
+}
+.more::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 15rpx;   
+    height: 15rpx;
+    left:130rpx;
+    top:14rpx;
+    /* background: yellow; */
+    border-top:2px solid #8f96A0;
+    border-right:2px solid #8f96A0; 
+    transform: rotate(45deg)
+}
 
 
 

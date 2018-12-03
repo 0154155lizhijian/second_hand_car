@@ -1,18 +1,28 @@
-<view class="search-container">
-  <view class="back" bindtap="back">   </view>
+<loading hidden="{{hiddenLoading}}"></loading>
+<view class="container">
+  <view class="search-container">
+    <view class="back" bindtap="back"></view>
     <!-- 选择城市 -->
-    <view class="city" bindtap="{{isCityTrue?'hideCity':'showCity'}}">
     <view class="cityZhezhao {{isCityTrue?'isCityShow':'isCityHide'}}">
       <view class='cityContent'>
         <list-html data="{{city}}" binddetail="bindtap" search="{{value}}" myCity="{{myCity}}"></list-html>
       </view>
     </view>
-    <!-- end -->  
+    <!-- end -->
+    <view class="city" wx:if="{{isCityTrue}}" bindtap="hideCity">
       <view class="city_curr">
         <text>{{myCity}}</text>
       </view>
       <view class="down">
-        <icon type="xialaxuanze-" fontSize="12px" />
+        <icon type="een" fontSize="12px" />
+      </view>
+    </view>
+    <view class="city" wx:else bindtap="showCity">
+      <view class="city_curr">
+        <text>{{myCity}}</text>
+      </view>
+      <view class="down">
+        <icon type="down" fontSize="12px" />
       </view>
     </view>
     <view class="search">
@@ -25,3 +35,44 @@
       <icon type="yonghu" fontSize="19px" />
     </view>
   </view>
+  <view class="rank">
+    <view class="{{isrank1?'rank1_else':'rank1'}}" bindtap="rank1">
+      <text>智能排序</text>
+    </view>
+    <view class="{{isrank2?'rank2_else':'rank2'}}" bindtap="rank2">
+      <text>品牌</text>
+    </view>
+    <view class="{{isrank3?'rank3_else':'rank3'}}" bindtap="rank3">
+      <text>价格</text>
+    </view>
+    <view class="{{isrank4?'rank4_else':'rank4'}}" bindtap="rank4">
+      <text>筛选</text>
+    </view>
+  </view>
+  <view class='line'></view>
+  <view class="uLike-car-content">
+    <view class="lists">
+      <ul class="car-lists">
+        <li class="car-list">
+          <view class="uLike-item-content" wx:for="{{cars}}" wx:for-item="car" wx:key="car.id">
+            <view class="uLike-item">
+              <view class="uLike-item-left">
+                <image src="https://image.guazistatic.com/gz01181118/11/24/cfc4c7cb4f48217c360f9700d7865a5f.jpg@base@tag=imgScale&amp;w=287&amp;h=192&amp;c=1&amp;m=2&amp;q=88" />
+              </view>
+              <view class="uLike-item-right">
+                <view class="uLike-item-info">
+                  <text id='info'>{{car.car}}\n</text>
+                  <text id="old">{{car.year}}/{{car.kilometer}}\n</text>
+                  <text id="price">{{car.price}}</text>
+                  <text id="old">新车价</text>
+                  <text id='newPrice'>{{car.newprice}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </li>
+      </ul>
+      <view wx:if="{{page-1==pageNum}}" class="foot">大哥，见底了</view>
+    </view>
+  </view>
+</view>

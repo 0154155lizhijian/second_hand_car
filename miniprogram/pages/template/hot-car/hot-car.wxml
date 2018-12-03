@@ -3,7 +3,7 @@
         <view class="title">
             <view class="title-name">热门二手车</view>
             <view class="title-more">
-                <span class="toAll">查看全部</span>
+                <span class="toAll" bindtap='toAll'>查看全部</span>
             </view>
         </view>
         <view class="select">
