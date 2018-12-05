@@ -1,5 +1,6 @@
 let City = require('../../../utils/allcity.js');
 wx.cloud.init();
+wx.cloud.init();
 const db = wx.cloud.database()
 Page({
   data: {
@@ -27,10 +28,18 @@ Page({
       name: 'getcarinfo',
       data: {
         page: page,
+        pageSize:10
       }
     })
     .then(res => {
       let data = res.result.data
+      // data.map((item)=>{
+        
+      //   item.price = item.price.slice(0,item.price.length-1);
+        
+      //   item.price=parseFloat(item.price)
+      // })
+     
       let cars = [...data, ...this.data.cars]
       console.log(cars)
       this.setData({
@@ -43,21 +52,21 @@ Page({
   onLoad: function (options) {
     this.getcarinfo()
   },
-  onReachBottom() {
-    if (this.data.page<=this.data.pageNum) {
-      wx.showToast({
-        title: '加载更多',
-        image: '../../../images/loading.gif'
-      })
-      let page = this.data.page + 1;
-      this.setData({
-        page: page
-      });
-      this.getcarinfo()
-      console.log('到页面底部了');
-    }
+  // onReachBottom() {
+  //   if (this.data.page<=this.data.pageNum) {
+  //     wx.showToast({
+  //       title: '加载更多',
+  //       image: '../../../images/loading.gif'
+  //     })
+  //     let page = this.data.page + 1;
+  //     this.setData({
+  //       page: page
+  //     });
+  //     this.getcarinfo()
+  //     console.log('到页面底部了');
+  //   }
   
-  },
+  // },
   //排序
   rank1:function(e){
     let st = e.currentTarget.dataset.status
@@ -96,7 +105,33 @@ Page({
   rankList1_2:function(e){
     let liststatus = e.currentTarget.dataset.liststatus_1
     this.setData({
-      liststatus_1:liststatus
+      liststatus_1:liststatus,
+      page:1
+    })
+    let page = this.data.page
+    let year ='year'
+    wx.cloud.callFunction({
+      name: 'priceAsc',
+      data: {
+        page: page,
+        year:year,
+      }
+    })
+    .then(res => {
+      let data = res.result.data
+      // data.map((item)=>{
+        
+      //   item.price = item.price.slice(0,item.price.length-1);
+        
+      //   item.price=parseFloat(item.price)
+      // })
+      let cars = [...data]
+      // let cars = [...data, ...this.data.cars]
+      console.log(cars)
+      this.setData({
+        hiddenLoading: true,
+        cars:cars
+      })
     })
   },
   rankList1_3:function(e){

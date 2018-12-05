@@ -17,7 +17,7 @@
                     <view class="uLike-item-content" wx:for="{{cars}}" wx:for-item="car" wx:if="{{car.type == '猜你喜欢'}}" wx:key="car.id">
                         <view class="uLike-item">
                             <view class="uLike-item-left">
-                                <image src="../../images/like.jpg" />
+                                <image src="{{car.picture}}" />
                             </view>
                             <view class="uLike-item-right">
                                 <view class="uLike-item-info">
@@ -39,7 +39,7 @@
                     <view class="uLike-item-content" wx:for="{{cars}}" wx:for-item="car" wx:if="{{car.type == '严选车'}}" wx:key="car.id">
                         <view class="uLike-item">
                             <view class="uLike-item-left">
-                                <image src="../../images/strict.jpg" />
+                                <image src="{{car.picture}}" />
                             </view>
                             <view class="uLike-item-right">
                                 <view class="uLike-item-info">
@@ -61,7 +61,7 @@
                     <view class="uLike-item-content" wx:for="{{cars}}" wx:for-item="car" wx:if="{{car.type=='超值车源'}}" wx:key="car.id">
                         <view class="uLike-item">
                             <view class="uLike-item-left">
-                                <image src="../../images/cheap.jpg" />
+                                <image src="{{car.picture}}" />
                             </view>
                             <view class="uLike-item-right">
                                 <view class="uLike-item-info">

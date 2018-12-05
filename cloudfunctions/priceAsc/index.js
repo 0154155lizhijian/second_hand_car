@@ -3,8 +3,7 @@ const cloud = require('wx-server-sdk')
 
 cloud.init()
 const db = cloud.database()
-
 // 云函数入口函数
 exports.main = async (event, context) => {
-  return await db.collection('car').skip((event.page - 1) * event.pageSize).limit(event.pageSize).get()
+  return await db.collection('car').orderBy('price', 'asc').get()
 }

@@ -29,6 +29,7 @@ Page({
         name: 'getcarinfo',
         data: {
           page: page,
+          pageSize:18,
         }
       })
       .then(res => {
@@ -55,16 +56,6 @@ Page({
     this.setData({
       status: 1,
     })
-  },
-  onReachBottom() {
-    if (this.data.page <= this.data.pageNum) {
-      let page = this.data.page + 1;
-      this.setData({
-        page: page
-      });
-      this.getcarinfo()
-    }
-    console.log('到页面底部了');
   },
   //状态选择
   showStatus: function(e) {

@@ -82,7 +82,7 @@
           <view class="uLike-item-content" wx:for="{{cars}}" wx:for-item="car" wx:key="car.id">
             <view class="uLike-item">
               <view class="uLike-item-left">
-                <image src="https://image.guazistatic.com/gz01181118/11/24/cfc4c7cb4f48217c360f9700d7865a5f.jpg@base@tag=imgScale&amp;w=287&amp;h=192&amp;c=1&amp;m=2&amp;q=88" />
+                <image src="{{car.picture}}" />
               </view>
               <view class="uLike-item-right">
                 <view class="uLike-item-info">
