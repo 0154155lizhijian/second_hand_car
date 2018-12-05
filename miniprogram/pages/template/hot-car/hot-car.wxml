@@ -11,7 +11,7 @@
                 <view class="select-item-font" wx:if="{{!item.hasIcon}}">{{item.type}}</view>
                 <view class="select-item-item" wx:else>
                     <view class="type-icon-img">
-                        <image class="type-icon-img" src="{{item.icon}}" />
+                        <image src="{{item.icon}}" />
                         <!-- <image class="type-icon-img" src="../../../images/jili.png" /> -->
                     </view>
                     <view class="select-item-item-font">{{item.type}}</view>

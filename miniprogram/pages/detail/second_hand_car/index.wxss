@@ -56,7 +56,7 @@ Page,.container{
 }
 .rank1_else{
     font-size: 30rpx;
-    color: #333333;
+    color: #22AC38;
     width: 130rpx;
     line-height: 70rpx;
     height: 70rpx;
@@ -71,18 +71,9 @@ Page,.container{
     position: relative;
     box-sizing: border-box;
 }
-.rank2,.rank3,.rank4{
-    font-size: 30rpx;
-    color: #333333;
-    width: 70rpx;
-    line-height: 70rpx;
-    height: 70rp;
-    position: relative;
-    box-sizing: border-box;
-}
 .rank2_else,.rank3_else,.rank4_else{
     font-size: 30rpx;
-    color: #333333;
+    color: #22AC38;
     width: 70rpx;
     line-height: 70rpx;
     height: 70rp;
@@ -111,8 +102,8 @@ Page,.container{
     left:130rpx;
     top:34rpx;
     /* background: yellow; */
-    border-top:2px solid #363636;
-    border-left:2px solid #363636; 
+    border-top:2px solid #22AC38;
+    border-left:2px solid #22AC38; 
     transform: rotate(45deg)
 }
 .rank2::after,.rank3::after,.rank4::after{
@@ -137,15 +128,15 @@ Page,.container{
     left:70rpx;
     top:34rpx;
     /* background: yellow; */
-    border-top:2px solid #363636;
-    border-left:2px solid #363636; 
+    border-top:2px solid #22AC38;
+    border-left:2px solid #22AC38; 
     transform: rotate(45deg)
 }
 .line{
   width: 750rpx;
   background: #f7f7f7;
   height: 1rpx;
-  margin-top: 20rpx;
+  margin-top: 10rpx;
   margin-bottom: 20rpx;
 }
 image{
@@ -164,5 +155,27 @@ image{
     text-align: center;
     color: #8f96A0;
 }
+
+.active{
+    color: #22AC38;
+}
+.rank-lists{
+    position: absolute;
+    top: 155rpx;
+    width: 750rpx;
+}
+.rank-list{
+    margin-left: 35rpx;
+    padding-left: 20rpx;
+    width: 640rpx;
+    height: 50rpx;
+    font-size: 28rpx;
+    line-height: 50rpx;
+    list-style: none;
+    text-align: left;
+    float: left;
+    border-bottom:1rpx solid #f7f7f7 ;
+}
+
 
 

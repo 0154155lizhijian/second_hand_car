@@ -89,6 +89,10 @@
     margin-left: 8rpx;
     margin-right: 16rpx;
 }
+.type-icon-img image{
+    width: 50rpx !important;
+    height: 50rpx !important;
+}
 
 .select-item-font{
     width: 100%;

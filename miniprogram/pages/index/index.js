@@ -66,6 +66,7 @@ Page({
     }
     console.log('到页面底部了');
   },
+  //状态选择
   showStatus: function(e) {
     var st = e.currentTarget.dataset.status
     this.setData({

@@ -3,7 +3,7 @@ wx.cloud.init();
 const db = wx.cloud.database()
 Page({
   data: {
-    city: City,
+    city: City, 
     myCity: '南昌',
     isCityTrue: false,
     cars:[],
@@ -14,6 +14,10 @@ Page({
     isrank2:false,
     isrank3:false,
     isrank4:false,
+    status:'',
+    liststatus_1:'',
+    liststatus_3:'',
+    liststatus_4:'',
   },
   //云数据库分页加载数据
   getcarinfo: function () {
@@ -56,25 +60,106 @@ Page({
   },
   //排序
   rank1:function(e){
+    let st = e.currentTarget.dataset.status
     this.setData({
-      isrank1 : !this.data.isrank1
+      isrank1 : !this.data.isrank1,
+      status:st
     })
   },
   rank2:function(e){
+    let st = e.currentTarget.dataset.status
     this.setData({
-      isrank2 : !this.data.isrank2
+      isrank2 : !this.data.isrank2,
+      status:st
     })
   },
   rank3:function(e){
+    let st = e.currentTarget.dataset.status
     this.setData({
-      isrank3: !this.data.isrank3
+      isrank3: !this.data.isrank3,
+      status:st
     })
   },
   rank4:function(e){
+    let st = e.currentTarget.dataset.status
     this.setData({
-      isrank4 : !this.data.isrank4
+      isrank4 : !this.data.isrank4,
+      status:st
     })
   },
+  rankList1_1:function(e){
+    let liststatus = e.currentTarget.dataset.liststatus_1
+    this.setData({
+      liststatus_1:liststatus
+    })
+  },
+  rankList1_2:function(e){
+    let liststatus = e.currentTarget.dataset.liststatus_1
+    this.setData({
+      liststatus_1:liststatus
+    })
+  },
+  rankList1_3:function(e){
+    let liststatus = e.currentTarget.dataset.liststatus_1
+    this.setData({
+      liststatus_1:liststatus
+    })
+  },
+  rankList1_4:function(e){
+    let liststatus = e.currentTarget.dataset.liststatus_1
+    this.setData({
+      liststatus_1:liststatus
+    })
+  },
+  rankList1_5:function(e){
+    let liststatus = e.currentTarget.dataset.liststatus_1
+    this.setData({
+      liststatus_1:liststatus
+    })
+  },
+  rankList3_1:function(e){
+    let liststatus = e.currentTarget.dataset.liststatus_3
+    this.setData({
+      liststatus_3:liststatus
+    })
+  },
+  rankList3_2:function(e){
+    let liststatus = e.currentTarget.dataset.liststatus_3
+    this.setData({
+      liststatus_3:liststatus
+    })
+  },
+  rankList3_3:function(e){
+    let liststatus = e.currentTarget.dataset.liststatus_3
+    this.setData({
+      liststatus_3:liststatus
+    })
+  },
+  rankList3_4:function(e){
+    let liststatus = e.currentTarget.dataset.liststatus_3
+    this.setData({
+      liststatus_3:liststatus
+    })
+  },
+  rankList3_5:function(e){
+    let liststatus = e.currentTarget.dataset.liststatus_3
+    this.setData({
+      liststatus_3:liststatus
+    })
+  },
+  rankList4_1:function(e){
+    let liststatus = e.currentTarget.dataset.liststatus_4
+    this.setData({
+      liststatus_4:liststatus
+    })
+  },
+  rankList4_2:function(e){
+    let liststatus = e.currentTarget.dataset.liststatus_4
+    this.setData({
+      liststatus_4:liststatus
+    })
+  },
+
   //打开城市选择
   showCity: function () {
     this.setData({

@@ -36,19 +36,44 @@
     </view>
   </view>
   <view class="rank">
-    <view class="{{isrank1?'rank1_else':'rank1'}}" bindtap="rank1">
+    <!-- <view class="{{status='1'?'rank1_else':'rank1'}}" data-status='1' bindtap="{{isrank1?isrank1show:isrank1hidden}}"> -->
+    <view class="{{isrank1&&status==='1'?'rank1_else':'rank1'}}" data-status='1' bindtap="rank1">
       <text>智能排序</text>
     </view>
-    <view class="{{isrank2?'rank2_else':'rank2'}}" bindtap="rank2">
+    <view class="{{isrank2&&status==='2'?'rank2_else':'rank2'}}" data-status='2' bindtap="rank2">
       <text>品牌</text>
-    </view>
-    <view class="{{isrank3?'rank3_else':'rank3'}}" bindtap="rank3">
+    </view> 
+    <view class="{{isrank3&&status==='3'?'rank3_else':'rank3'}}" data-status='3' bindtap="rank3">
       <text>价格</text>
     </view>
-    <view class="{{isrank4?'rank4_else':'rank4'}}" bindtap="rank4">
+    <view class="{{isrank4&&status==='4'?'rank4_else':'rank4'}}" data-status='4' bindtap="rank4">
       <text>筛选</text>
     </view>
   </view>
+    <view class="rank1-list" wx:if="{{status=='1'&&isrank1}}" >
+      <ul calss="rank-lists"> 
+        <li data-liststatus_1='1' class="{{liststatus_1==='1'?'rank-list active':'rank-list'}}" bindtap='rankList1_1'><view>默认排序</view></li>
+        <li data-liststatus_1='2' class="{{liststatus_1==='2'?'rank-list active':'rank-list'}}" bindtap='rankList1_2'><view>价格升序</view></li>
+        <li data-liststatus_1='3' class="{{liststatus_1==='3'?'rank-list active':'rank-list'}}" bindtap='rankList1_3'><view>价格降序</view></li>
+        <li data-liststatus_1='4' class="{{liststatus_1==='4'?'rank-list active':'rank-list'}}" bindtap='rankList1_4'><view>里程最少</view></li>
+        <li data-liststatus_1='5' class="{{liststatus_1==='5'?'rank-list active':'rank-list'}}" bindtap='rankList1_5'><view>年龄最短</view></li>
+      </ul>
+    </view>
+    <view class="rank3-list" wx:if="{{status=='3'&&isrank3}}" >
+      <ul calss="rank-lists"> 
+        <li data-liststatus_3='1' class="{{liststatus_3==='1'?'rank-list active':'rank-list'}}" bindtap='rankList3_1'><view>不限</view></li>
+        <li data-liststatus_3='2' class="{{liststatus_3==='2'?'rank-list active':'rank-list'}}" bindtap='rankList3_2'><view>5万以下</view></li>
+        <li data-liststatus_3='3' class="{{liststatus_3==='3'?'rank-list active':'rank-list'}}" bindtap='rankList3_3'><view>5-10万</view></li>
+        <li data-liststatus_3='4' class="{{liststatus_3==='4'?'rank-list active':'rank-list'}}" bindtap='rankList3_4'><view>10-20万</view></li>
+        <li data-liststatus_3='5' class="{{liststatus_3==='5'?'rank-list active':'rank-list'}}" bindtap='rankList3_5'><view>20万以上</view></li>
+      </ul>
+    </view>
+    <view class="rank4-list" wx:if="{{status=='4'&&isrank4}}" >
+      <ul calss="rank-lists"> 
+        <li data-liststatus_4='1' class="{{liststatus_4==='1'?'rank-list active':'rank-list'}}" bindtap='rankList4_1'><view>严选车</view></li>
+        <li data-liststatus_4='2' class="{{liststatus_4==='2'?'rank-list active':'rank-list'}}" bindtap='rankList4_2'><view>超值车源</view></li>
+      </ul>
+    </view>
   <view class='line'></view>
   <view class="uLike-car-content">
     <view class="lists">
