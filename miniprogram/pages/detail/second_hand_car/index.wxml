@@ -1,42 +1,13 @@
+<import src="../../template/search/search-container.wxml"></import>
+<import src="../../template/uLike-item/uLike-item.wxml"></import>
 <loading hidden="{{hiddenLoading}}"></loading>
+<image src='../../../images/gotop.jpg' class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
 <view class="container">
   <view class="search-container">
     <view class="back" bindtap="back"></view>
-    <!-- 选择城市 -->
-    <view class="cityZhezhao {{isCityTrue?'isCityShow':'isCityHide'}}">
-      <view class='cityContent'>
-        <list-html data="{{city}}" binddetail="bindtap" search="{{value}}" myCity="{{myCity}}"></list-html>
-      </view>
-    </view>
-    <!-- end -->
-    <view class="city" wx:if="{{isCityTrue}}" bindtap="hideCity">
-      <view class="city_curr">
-        <text>{{myCity}}</text>
-      </view>
-      <view class="down">
-        <icon type="een" fontSize="12px" />
-      </view>
-    </view>
-    <view class="city" wx:else bindtap="showCity">
-      <view class="city_curr">
-        <text>{{myCity}}</text>
-      </view>
-      <view class="down">
-        <icon type="down" fontSize="12px" />
-      </view>
-    </view>
-    <view class="search">
-      <van-search placeholder="搜索您要的车" background="none"></van-search>
-    </view>
-    <view class="call">
-      <icon type="kefu" fontSize="19px" />
-    </view>
-    <view class="user">
-      <icon type="yonghu" fontSize="19px" />
-    </view>
+    <template is="search-container" data="{{isCityTrue:isCityTrue,city:city,myCity:myCity}}"></template>
   </view>
   <view class="rank">
-    <!-- <view class="{{status='1'?'rank1_else':'rank1'}}" data-status='1' bindtap="{{isrank1?isrank1show:isrank1hidden}}"> -->
     <view class="{{isrank1&&status==='1'?'rank1_else':'rank1'}}" data-status='1' bindtap="rank1">
       <text>智能排序</text>
     </view>
@@ -79,21 +50,8 @@
     <view class="lists">
       <ul class="car-lists">
         <li class="car-list">
-          <view class="uLike-item-content" wx:for="{{cars}}" wx:for-item="car" wx:key="car.id">
-            <view class="uLike-item">
-              <view class="uLike-item-left">
-                <image src="{{car.picture}}" />
-              </view>
-              <view class="uLike-item-right">
-                <view class="uLike-item-info">
-                  <text id='info'>{{car.car}}\n</text>
-                  <text id="old">{{car.year}}/{{car.kilometer}}\n</text>
-                  <text id="price">{{car.price}}</text>
-                  <text id="old">新车价</text>
-                  <text id='newPrice'>{{car.newprice}}</text>
-                </view>
-              </view>
-            </view>
+          <view class="uLike-item-content" wx:for="{{cars}}" wx:for-item="car" wx:key="car.id" >
+               <template is="uLike-item" data="{{car:car}}" ></template>
           </view>
         </li>
       </ul>

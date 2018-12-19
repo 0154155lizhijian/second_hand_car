@@ -1,0 +1,9 @@
+<!--pages/order/orderTicketList/orderTicketList.wxml-->
+<view class="container ">
+    <view class="usedcoupon" wx:if="{{isUsed}}">
+        <image src="" mode="aspectFill" />
+    </view>
+    <view class="coupon">
+        <image src="" mode="aspectFill" />
+    </view>
+</view>

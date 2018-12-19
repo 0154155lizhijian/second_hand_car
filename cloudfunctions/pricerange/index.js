@@ -3,7 +3,10 @@ const cloud = require('wx-server-sdk')
 
 cloud.init()
 const db = cloud.database()
+const _ = db.command
 // 云函数入口函数
 exports.main = async (event, context) => {
-  return await db.collection('car').orderBy('price', 'asc').get()
+  return await db.collection('car').where({
+    price: _.gt(event.lower). and(_.lte(event.high))
+  }).get()
 }

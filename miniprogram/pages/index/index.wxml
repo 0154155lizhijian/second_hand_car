@@ -8,7 +8,9 @@
 <import src="../template/discovery/discovery.wxml"></import>
 <import  src="../template/ulike/ulike.wxml" />
 <view class="container">
-  <template is="search-container" data="{{isCityTrue:isCityTrue,city:city,myCity:myCity}}"></template>
+  <view class="search-container">
+    <template is="search-container" data="{{isCityTrue:isCityTrue,city:city,myCity:myCity}}"></template>
+  </view>
   <template is="adInfos" data="{{ads:ads,beforeColor:beforeColor,afterColor:afterColor}}"></template>
   <template is="navigation-bar" data="{{navigation_bar_lists:navigation_bar_lists,beforeColor:beforeColor,afterColor:afterColor}}"></template>
   <view class="separation"></view>

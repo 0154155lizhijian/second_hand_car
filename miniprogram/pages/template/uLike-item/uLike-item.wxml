@@ -1,0 +1,16 @@
+ <template name="uLike-item">
+     <view class="uLike-item" data-key="{{car._id}}" bindtap="toInfo">
+         <view class="uLike-item-left">
+             <image src="{{car.picture}}" />
+         </view>
+         <view class="uLike-item-right">
+             <view class="uLike-item-info">
+                 <text id='info'>{{car.car}}\n</text>
+                 <text id="old">{{car.year}}年/{{car.kilometer}}万公里\n</text>
+                 <text id="price">{{car.price}}万</text>
+                 <text id="old">新车价</text>
+                 <text id='newPrice'>{{car.newprice}}万</text>
+             </view>
+         </view>
+     </view>
+ </template>

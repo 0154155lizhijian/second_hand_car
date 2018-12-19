@@ -315,8 +315,8 @@ verror@1.10.0:
     extsprintf "^1.2.0"
 
 wx-server-sdk@latest:
-  version "0.0.27"
-  resolved "http://registry.npm.taobao.org/wx-server-sdk/download/wx-server-sdk-0.0.27.tgz#7dee017e8f60a214ccea02ca56d6492240a07368"
+  version "0.1.0"
+  resolved "http://registry.npm.taobao.org/wx-server-sdk/download/wx-server-sdk-0.1.0.tgz#466cb7de02f8e3c12fa3dea740d6eaa90b74eddf"
   dependencies:
     tcb-admin-node "1.2.2"
     tslib "^1.9.3"

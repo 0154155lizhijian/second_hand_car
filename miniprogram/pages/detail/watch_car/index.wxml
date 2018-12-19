@@ -1,0 +1,13 @@
+<view class="container">
+    <view class="cover">
+        <image mode="aspectFill" src="../../../images/watch.jpg" />
+    </view>
+    <view class="info">
+        <text>正在为您联系卖家，届时会将信息发送到您的手机，请注意查收</text>
+        <text class='other'>...</text>
+    </view>
+    <view class="goBack">
+        <view class="backToLast" bindtap="toLast">返回上层</view>
+        <view class="backToIndex" bindtap="toIndex">返回首页</view>
+    </view>
+</view>

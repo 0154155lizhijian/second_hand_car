@@ -97,6 +97,17 @@ Page({
     wx.navigateTo({
       url: '../detail/second_hand_car/index',
     })
+  },
+  onShareAppMessage: (res) => {
+    return {
+      title: '二手车',
+      path: 'pages/detail/second_hand_car/index',
+      success: res => {
+        console.log('转发成功')
+      },
+      fail: res => {
+        console.log('转发失败')
+      }
+    }
   }
-
 })

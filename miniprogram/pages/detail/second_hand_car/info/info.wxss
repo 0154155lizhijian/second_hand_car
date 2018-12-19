@@ -1,0 +1,125 @@
+.info-container{
+    height: 1390rpx;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.car-info{
+    height: 700rpx;
+    width: 750rpx;
+    display: flex;
+    flex-direction: column;
+    /* position: relative; */
+}
+.back{
+    height: 50rpx;
+    width: 50rpx;
+    position: absolute;
+}
+.goback{
+    height: 50rpx;
+    width: 50rpx;
+    position: relative;
+}
+.goback::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 15rpx;   
+    height: 15rpx;
+    left:30rpx;
+    top:35rpx;
+    border-bottom:2px solid #8F96A0;
+    border-left:2px solid #8F96A0; 
+    transform: rotate(45deg)
+}
+.car-image{
+    width: 750rpx;
+    height: 500rpx;
+}
+image{
+    width: 100%;
+    height: 100%;
+}
+.info{
+    height: 200rpx;
+    width: 670rpx;
+    margin-left: 40rpx;
+}
+#name{
+    font-size: 35rpx;
+    color: #495056;
+}
+.name{
+    height: 100rpx;
+    line-height: 100rpx;
+    overflow: hidden;
+    margin-bottom: 10rpx;
+}
+#price{
+    font-size: 38rpx;
+    color: #ff7147;
+}
+#new-price{
+    font-size: 30rpx;
+    color: #ff7147;
+    /* line-height: 100rpx; */
+}
+.line{
+    height: 14rpx;
+    background-color: #F5F7FA;
+}
+.serve{
+    height: 540rpx;
+    width: 670rpx;
+    margin-left: 40rpx;
+}
+.serve-td{
+    height: 114rpx;
+    margin-top: 45rpx;
+}
+#server-title{
+    font-size: 35rpx;
+    color: #303741; 
+}
+#serve-title-info{
+    font-size: 28rpx;
+    color:#8F96A0;
+}
+.serve-bd{
+    height: 406rpx;
+    width: 670rpx;
+}
+.buy-car{
+    position: fixed;
+    display: flex; 
+    bottom: 0;
+    left: 0;
+    height: 100rpx;
+    width: 750rpx;
+    background-color: #ffffff;
+}
+.cheap{
+    width: 300rpx;
+    height: 100rpx;
+    text-align: center;
+    line-height: 100rpx;
+    background-color: #ff7147;
+    color: #ffffff;
+    border-radius: 10rpx;
+    margin-left: 50rpx;
+    margin-right: 50rpx;
+}
+.watch{
+    line-height: 100rpx;
+    text-align: center;
+    width: 300rpx;
+    height: 100rpx;
+    background-color: #22AC38;
+    color: #ffffff;
+    border-radius: 10rpx;
+    margin-right: 50rpx;
+}
+.ft{
+    height: 150rpx;
+}

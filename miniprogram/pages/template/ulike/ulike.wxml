@@ -1,3 +1,4 @@
+<import src="../uLike-item/uLike-item.wxml"></import>
 <template name="like">
     <view class="uLike">
         <view class="uLike-titleBar">
@@ -15,20 +16,7 @@
             <ul>
                 <li>
                     <view class="uLike-item-content" wx:for="{{cars}}" wx:for-item="car" wx:if="{{car.type == '猜你喜欢'}}" wx:key="car.id">
-                        <view class="uLike-item">
-                            <view class="uLike-item-left">
-                                <image src="{{car.picture}}" />
-                            </view>
-                            <view class="uLike-item-right">
-                                <view class="uLike-item-info">
-                                    <text id='info'>{{car.car}}\n</text>
-                                    <text id="old">{{car.year}}/{{car.kilometer}}\n</text>
-                                    <text id="price">{{car.price}}</text>
-                                    <text id="old">新车价</text>
-                                    <text id='newPrice'>{{caar.newprice}}</text>
-                                </view>
-                            </view>
-                        </view>
+                       <template is="uLike-item" data="{{car:car}}"></template>
                     </view>
                 </li>
             </ul>
@@ -37,20 +25,7 @@
             <ul>
                 <li>
                     <view class="uLike-item-content" wx:for="{{cars}}" wx:for-item="car" wx:if="{{car.type == '严选车'}}" wx:key="car.id">
-                        <view class="uLike-item">
-                            <view class="uLike-item-left">
-                                <image src="{{car.picture}}" />
-                            </view>
-                            <view class="uLike-item-right">
-                                <view class="uLike-item-info">
-                                    <text id='info'>{{car.car}}\n</text>
-                                    <text id="old">{{car.year}}/{{car.kilometer}}\n</text>
-                                    <text id="price">{{car.price}}</text>
-                                    <text id="old">新车价</text>
-                                    <text id='newPrice'>{{caar.newprice}}</text>
-                                </view>
-                            </view>
-                        </view>
+                        <template is="uLike-item" data="{{car:car}}"></template>
                     </view>
                 </li>
             </ul>
@@ -59,23 +34,10 @@
             <ul>
                 <li>
                     <view class="uLike-item-content" wx:for="{{cars}}" wx:for-item="car" wx:if="{{car.type=='超值车源'}}" wx:key="car.id">
-                        <view class="uLike-item">
-                            <view class="uLike-item-left">
-                                <image src="{{car.picture}}" />
-                            </view>
-                            <view class="uLike-item-right">
-                                <view class="uLike-item-info">
-                                    <text id='info'>{{car.car}}\n</text>
-                                    <text id="old">{{car.year}}/{{car.kilometer}}\n</text>
-                                    <text id="price">{{car.price}}</text>
-                                    <text id="old">新车价</text>
-                                    <text id='newPrice'>{{car.newprice}}</text>
-                                </view>
-                            </view>
-                        </view>
+                        <template is="uLike-item" data="{{car:car}}"></template>
                     </view>
                 </li>
-            </ul>
+            </ul>   
         </view>
         <view class="more" bindtap="toMore">查看更多</view>
     </view>

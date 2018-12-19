@@ -1,0 +1,29 @@
+<view class="info-container">
+    <view class="car-info">
+        <view class="back">
+          <view class='goback' bindtap='goback'></view>
+        </view>
+        <view class="car-image">
+            <image src="{{car.picture}}" mode="aspectFill" />
+        </view>
+        <view class="info">
+                <view class="name"> <text id="name">{{car.car}}\n</text></view>
+                <text id="price">{{car.price}}</text>
+                <text id="new-price">万 补贴后{{car.newprice}}万</text>
+        </view>
+    </view>
+    <view class="line"></view>
+    <view class="serve">
+        <view class="serve-td">
+            <text id="serve-title">服务保障 </text><text id="serve-title-info">服务费不超过9%，详情到店咨询</text>
+        </view>
+        <view class="serve-bd">
+            <image src="../../../../images/baozhang.png" mode="aspectFill" />
+        </view>
+    </view>
+    <view class="ft"></view>
+    <view class="buy-car">
+    <view class="cheap" bindtap="toDiscounts">我要优惠</view>
+    <view class="watch" bindtap="toCar"> 我要看车</view>
+    </view>
+</view>

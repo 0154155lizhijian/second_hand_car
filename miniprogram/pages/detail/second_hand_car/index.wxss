@@ -176,6 +176,13 @@ image{
     float: left;
     border-bottom:1rpx solid #f7f7f7 ;
 }
-
-
+.goTop{
+    height: 80rpx;
+    width: 80rpx;
+    position: fixed;
+    bottom: 50rpx;
+    background: rgba(0,0,0,.3);
+    right: 30rpx;
+    border-radius: 50%;
+  }
 

@@ -1,0 +1,68 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cover{
+    width: 600rpx;
+    height: 290rpx;
+    margin-top: 100rpx;
+}
+image{
+    width: 100%;
+    height: 100%;
+}
+.info{
+    width: 600rpx;
+    margin-top: 80rpx;
+    font-size: 60rpx;
+    color: slategray;
+}
+.other{
+    position:relative;
+    animation:mymove 2s infinite;
+    -webkit-animation:mymove 1s infinite; /*Safari and Chrome*/
+}
+@keyframes mymove
+{
+from {left:0px;}
+to {left:80rpx;}
+}
+
+@-webkit-keyframes mymove /*Safari and Chrome*/
+{
+from {left:0px;}
+to {left:80rpx;}
+}
+
+
+.goBack{
+    position: fixed;
+    display: flex; 
+    bottom: 0;
+    left: 0;
+    height: 100rpx;
+    width: 750rpx;
+    background-color: #ffffff;
+}
+.backToLast{
+    width: 300rpx;
+    height: 100rpx;
+    text-align: center;
+    line-height: 100rpx;
+    background-color: #ff7147;
+    color: #ffffff;
+    border-radius: 10rpx;
+    margin-left: 50rpx;
+    margin-right: 50rpx;
+}
+.backToIndex{
+    line-height: 100rpx;
+    text-align: center;
+    width: 300rpx;
+    height: 100rpx;
+    background-color: #22AC38;
+    color: #ffffff;
+    border-radius: 10rpx;
+    margin-right: 50rpx;
+}
