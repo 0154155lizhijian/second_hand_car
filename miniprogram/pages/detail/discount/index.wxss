@@ -1,0 +1,40 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.usedcoupon{
+    width: 720rpx;
+    height: 160rpx;
+    margin-top: 100rpx;
+    position: relative;
+}
+.coupon{
+    width: 720rpx;
+    height: 160rpx;
+    margin-top: 200rpx;
+    position: relative;
+}
+.discount{
+    top: 50rpx;
+    left: 180rpx;
+    position: absolute;
+    color: #ff615E;
+    font-size: 30rpx;
+}
+.time{
+    position: absolute;
+    top: 110rpx;
+    left: 10rpx;
+    color: #ff615E;
+    text-align: left;
+    font-size: 20rpx;
+}
+image{
+    width: 100%;
+    height: 100%;
+}
+
+.back{
+    margin-top: 150rpx;
+    width: 720rpx;
+}

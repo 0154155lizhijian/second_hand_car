@@ -26,8 +26,10 @@ Page({
     wx.cloud.callFunction({
       name: 'getcarinfo',
       data: {
+        strict:false,
         page: page,
-        pageSize:10
+        pageSize:10,
+        city:this.data.myCity
       }
     })
     .then(res => {
@@ -163,10 +165,12 @@ Page({
       isCityTrue: false
     })
   },
-  bindtap(e) {
+  refreshCity(e) {
     this.setData({
-      myCity: e.detail.name
+      myCity: e.detail.name,
+      cars:''
     })
+    this.getcarinfo()
   },
   back(e){
     wx.navigateTo({
@@ -212,6 +216,7 @@ function rankList(type,sort,that){
   wx.cloud.callFunction({
     name: 'rank',
     data: {
+      strict:false,
       page: that.data.page,
       type: type,
       sort:sort,
@@ -229,6 +234,7 @@ function priceRange(lower,high,that){
   wx.cloud.callFunction({
     name: 'pricerange',
     data: {
+      strict:false,
       lower:lower,
       high:high
     }

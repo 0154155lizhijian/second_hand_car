@@ -2,7 +2,7 @@
         <!-- 选择城市 -->
         <view class="cityZhezhao {{isCityTrue?'isCityShow':'isCityHide'}}">
             <view class='cityContent'>
-                <list-html data="{{city}}" binddetail="bindtap" search="{{value}}" myCity="{{myCity}}"></list-html>
+                <list-html data="{{city}}" binddetail="refreshCity" search="{{value}}" myCity="{{myCity}}" ></list-html>
             </view>
         </view>
         <!-- end -->

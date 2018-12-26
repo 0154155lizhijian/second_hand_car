@@ -1,9 +1,18 @@
 <!--pages/order/orderTicketList/orderTicketList.wxml-->
 <view class="container ">
-    <view class="usedcoupon" wx:if="{{isUsed}}">
-        <image src="" mode="aspectFill" />
+    <view class="usedcoupon" wx:if="{{isGain}}" >
+        <view class="discount">
+            九折秒杀券
+        </view>
+         <view class="time">有效期 {{nowtime}}-{{endtime}}</view>
+        <image src="../../../images/discount2.png" mode="aspectFill" />
     </view>
-    <view class="coupon">
-        <image src="" mode="aspectFill" />
+    <view class="usedcoupon" wx:else bindtap="get">
+        <view class="discount">
+            九折秒杀券
+        </view>
+         <view class="time">有效期 {{nowtime}}-{{endtime}}</view>
+        <image src="../../../images/discount1.png" mode="aspectFill" />
     </view>
+    <button class="back" type="primary" bindtap='back'>返回上一层</button>
 </view>

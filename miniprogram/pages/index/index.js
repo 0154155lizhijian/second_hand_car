@@ -21,15 +21,16 @@ Page({
     page: 1,
     hiddenLoading: false,
   },
-
   //云数据库分页加载数据
   getcarinfo: function() {
     let page = this.data.page
     wx.cloud.callFunction({
         name: 'getcarinfo',
         data: {
+          strict:false,
           page: page,
           pageSize:18,
+          city:this.data.myCity
         }
       })
       .then(res => {
@@ -64,7 +65,6 @@ Page({
       status: st,
     })
   },
-
   //打开城市选择
   showCity: function() {
     this.setData({
@@ -77,9 +77,14 @@ Page({
       isCityTrue: false
     })
   },
-  bindtap(e) {
+  refreshCity(e) {
     this.setData({
-      myCity: e.detail.name
+      myCity: e.detail.name,
+      cars:''
+    })
+    this.getcarinfo()
+    this.setData({
+      isCityTrue :!this.data.isCityTrue
     })
   },
   toDetailPage: function(e) {
@@ -96,6 +101,17 @@ Page({
   toMore: function(e) {
     wx.navigateTo({
       url: '../detail/second_hand_car/index',
+    })
+  },
+  toAll:function(e){
+    wx.navigateTo({
+      url: '../detail/second_hand_car/index'
+    })
+  },
+  toInfo(e){
+    let key = e.currentTarget.dataset.key
+    wx.navigateTo({
+      url: './info/info?key='+key,
     })
   },
   onShareAppMessage: (res) => {

@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/detail/discount/index",
     "pages/detail/watch_car/index",
     "pages/detail/second_hand_car/info/info",
-    "pages/index/index",
     "pages/detail/second_hand_car/index",
     "images/icon/index",
     "pages/detail/cheap_car/index",
