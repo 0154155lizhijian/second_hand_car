@@ -61,8 +61,9 @@ Page({
   },
 
   onLoad: function (options) {
+    
     let searchKey = options.searchkey;
-    if(searchKey == "null"){
+    if(searchKey == "null" || !searchKey){
       console.log('没有输入查询，查找全部')
       this.getcarinfo()
     }else{
