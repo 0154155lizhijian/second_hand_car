@@ -13,12 +13,13 @@ Page({
     isrank1:false,
     isrank2:false,
     isrank3:false,
-    isrank4:false,
+    isrank4:false,  
     status:'',
     liststatus_1:'',
     liststatus_3:'',
     liststatus_4:'',
     floorstatus: false,
+    searchKey:'',
   },
   //云数据库分页加载数据
   getcarinfo: function () {
@@ -41,9 +42,38 @@ Page({
       })
     })
   },
+  searchcar: function () {
+    wx.cloud.callFunction({
+      name: 'search',
+      data: {
+        searchKey:this.data.searchKey
+      }
+    })
+    .then(res => {
+      console.log(res)
+      let data = res.result.data
+      let cars = [...data, ...this.data.cars]
+      this.setData({
+        hiddenLoading: true,
+        cars:cars
+      })
+    })
+  },
 
   onLoad: function (options) {
-    this.getcarinfo()
+    let searchKey = options.searchkey;
+    if(searchKey == "null"){
+      console.log('没有输入查询，查找全部')
+      this.getcarinfo()
+    }else{
+      this.setData({
+        searchKey:searchKey
+      })
+  
+      this.searchcar()
+        
+      
+    }
   },
   onReachBottom() {
     if (this.data.page<=this.data.pageNum) {
@@ -209,7 +239,15 @@ goTop: function (e) {  // 一键回到顶部
     })
   }
 },
-
+onSearch:function(e){
+  let searchKey = e.detail
+  this.setData({
+    searchKey:searchKey,
+    page:6,
+    cars:[]
+  })
+  this.searchcar()
+}
 })
 
 function rankList(type,sort,that){

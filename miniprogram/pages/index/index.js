@@ -111,7 +111,7 @@ Page({
   toInfo(e){
     let key = e.currentTarget.dataset.key
     wx.navigateTo({
-      url: './info/info?key='+key,
+      url: '../detail/second_hand_car/info/info?key='+key,
     })
   },
   onShareAppMessage: (res) => {
@@ -125,5 +125,11 @@ Page({
         console.log('转发失败')
       }
     }
+  },
+  onSearch:(e)=>{
+    let searchKey = e.detail
+    wx.navigateTo({
+      url: '../detail/second_hand_car/index?searchkey='+searchKey,
+    })
   }
 })

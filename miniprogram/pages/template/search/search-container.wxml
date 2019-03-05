@@ -19,11 +19,11 @@
                 <text>{{myCity}}</text>
             </view>
             <view class="down">
-                <icon type="down" fontSize="12px" />
+                <icon type="down" fontSize="12px" />    
             </view>
         </view>
         <view class="search">
-            <van-search placeholder="搜索您要的车" background="none"></van-search>
+            <van-search placeholder="搜索您要的车" background="none"  bind:search="onSearch" ></van-search>
         </view>
         <view class="call">
             <icon type="kefu" fontSize="19px" />

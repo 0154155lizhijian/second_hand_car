@@ -5,7 +5,10 @@
          </view>
          <view class="uLike-item-right">
              <view class="uLike-item-info">
-                 <text id='info'>{{car.car}}\n</text>
+                 <view >
+                     <view class="strict-tag"  wx:if="{{car.type == '严选车'}}" ><text> 严选车</text></view>
+                     <text id='info'> {{car.car}}</text>
+                 </view>
                  <text id="old">{{car.year}}年/{{car.kilometer}}万公里\n</text>
                  <text id="price">{{car.price}}万</text>
                  <text id="old">新车价</text>

@@ -92,3 +92,15 @@
     color:#8F96A0;
     text-decoration: line-through;
 }
+.strict-tag{
+    display: inline-block;
+    width: 75rpx;
+    height: 30rpx;   
+    color: #ffffff;
+    font-size: 25rpx;
+    line-height: 30rpx;
+    border-radius: 5rpx;
+    background-color: #ffA600;
+    padding-left: 10rpx;
+    margin-right: 10rpx;
+}
